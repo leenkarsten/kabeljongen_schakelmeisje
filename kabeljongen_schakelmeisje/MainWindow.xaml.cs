@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using kabeljongen_schakelmeisje.windows;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,13 @@ namespace kabeljongen_schakelmeisje
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Level levelWindow = new Level();
+            levelWindow.Show();
+            this.Close();
         }
     }
 }
