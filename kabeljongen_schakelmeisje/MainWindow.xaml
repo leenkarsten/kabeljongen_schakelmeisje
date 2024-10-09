@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-
+        <Button Content="Level pagina" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click" Margin="0,532,0,0"/>
     </Grid>
 </Window>
