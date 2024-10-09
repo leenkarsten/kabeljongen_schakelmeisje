@@ -5,8 +5,160 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="1080" Width="1920" Background="#1F2937">
     <Grid>
-        
+        <!-- Titel -->
+        <TextBlock Text="Instellingen" 
+                   FontFamily="Press Start 2P" 
+                   FontSize="72" 
+                   Foreground="#FCD34D"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   Margin="0,50,0,0"/>
+
+        <!-- Taal knop -->
+        <Button Content="Taal" 
+                FontFamily="Press Start 2P" 
+                FontSize="28" 
+                Foreground="#FCD34D" 
+                Background="#3B82F6" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="400" 
+                Height="120" 
+                Margin="200,301,0,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <!-- Icon for Language -->
+                            <TextBlock Text="文" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Co-op knop -->
+        <Button Content="Co-op" 
+                FontFamily="Press Start 2P" 
+                FontSize="28" 
+                Foreground="#FCD34D" 
+                Background="#3B82F6" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="400" 
+                Height="120" 
+                Margin="200,490,0,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <!-- Icon for Co-op -->
+                            <TextBlock Text="👥" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Beeldkwaliteit knop -->
+        <Button Content="Beeldkwaliteit" 
+                FontFamily="Press Start 2P" 
+                FontSize="28" 
+                Foreground="#FCD34D" 
+                Background="#3B82F6" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="400" 
+                Height="120" 
+                Margin="200,683,0,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <!-- Icon for Display Settings -->
+                            <TextBlock Text="🖥" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Audio knop -->
+        <Button Content="Audio" 
+                FontFamily="Press Start 2P" 
+                FontSize="28" 
+                Foreground="#FCD34D" 
+                Background="#3B82F6" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Width="400" 
+                Height="120" 
+                Margin="0,301,200,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <!-- Icon for Audio -->
+                            <TextBlock Text="🎧" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Controls knop -->
+        <Button Content="Controls" 
+                FontFamily="Press Start 2P" 
+                FontSize="28" 
+                Foreground="#FCD34D" 
+                Background="#3B82F6" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Width="400" 
+                Height="120" 
+                Margin="0,498,200,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <!-- Icon for Controls -->
+                            <TextBlock Text="🔄" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Terug naar Hoofdmenu knop -->
+        <Button Content="Hoofd menu" 
+                FontFamily="Press Start 2P" 
+                FontSize="28" 
+                Foreground="#FCD34D" 
+                Background="#3B82F6" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom" 
+                Width="400" 
+                Height="120" 
+                Margin="0,0,0,50">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <!-- Icon for Back -->
+                            <TextBlock Text="↩" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </Window>
