@@ -24,5 +24,7 @@ namespace kabeljongen_schakelmeisje.windows
             InitializeComponent();
             //ik maak een change
         }
+
+       
     }
 }

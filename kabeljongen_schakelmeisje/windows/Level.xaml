@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Level" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Je bent nu op de level pagina " VerticalAlignment="Center"/>
     </Grid>
 </Window>
