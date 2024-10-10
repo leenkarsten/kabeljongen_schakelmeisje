@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows"
         mc:Ignorable="d"
         Title="Window1" Height="1080" Width="1920" Background="#1F2937">
+
     <Grid>
-        <!-- Titel -->
+
         <TextBlock Text="Instellingen" 
                    FontFamily="Press Start 2P" 
                    FontSize="72" 
@@ -16,8 +17,8 @@
                    VerticalAlignment="Top" 
                    Margin="0,50,0,0"/>
 
-        <!-- Taal knop -->
         <Button Content="Taal" 
+
                 FontFamily="Press Start 2P" 
                 FontSize="28" 
                 Foreground="#FCD34D" 
@@ -31,7 +32,6 @@
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" CornerRadius="10">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <!-- Icon for Language -->
                             <TextBlock Text="文" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
                             <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
                         </StackPanel>
@@ -40,7 +40,6 @@
             </Button.Template>
         </Button>
 
-        <!-- Co-op knop -->
         <Button Content="Co-op" 
                 FontFamily="Press Start 2P" 
                 FontSize="28" 
@@ -55,7 +54,6 @@
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" CornerRadius="10">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <!-- Icon for Co-op -->
                             <TextBlock Text="👥" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
                             <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
                         </StackPanel>
@@ -64,7 +62,6 @@
             </Button.Template>
         </Button>
 
-        <!-- Beeldkwaliteit knop -->
         <Button Content="Beeldkwaliteit" 
                 FontFamily="Press Start 2P" 
                 FontSize="28" 
@@ -79,7 +76,6 @@
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" CornerRadius="10">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <!-- Icon for Display Settings -->
                             <TextBlock Text="🖥" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
                             <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
                         </StackPanel>
@@ -88,7 +84,6 @@
             </Button.Template>
         </Button>
 
-        <!-- Audio knop -->
         <Button Content="Audio" 
                 FontFamily="Press Start 2P" 
                 FontSize="28" 
@@ -98,12 +93,12 @@
                 VerticalAlignment="Top" 
                 Width="400" 
                 Height="120" 
-                Margin="0,301,200,0">
+                Margin="0,301,200,0"
+                Click="Button_Audio">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" CornerRadius="10">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <!-- Icon for Audio -->
                             <TextBlock Text="🎧" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
                             <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
                         </StackPanel>
@@ -112,7 +107,6 @@
             </Button.Template>
         </Button>
 
-        <!-- Controls knop -->
         <Button Content="Controls" 
                 FontFamily="Press Start 2P" 
                 FontSize="28" 
@@ -127,7 +121,6 @@
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" CornerRadius="10">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <!-- Icon for Controls -->
                             <TextBlock Text="🔄" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
                             <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
                         </StackPanel>
@@ -136,7 +129,6 @@
             </Button.Template>
         </Button>
 
-        <!-- Terug naar Hoofdmenu knop -->
         <Button Content="Hoofd menu" 
                 FontFamily="Press Start 2P" 
                 FontSize="28" 
@@ -151,7 +143,6 @@
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" CornerRadius="10">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <!-- Icon for Back -->
                             <TextBlock Text="↩" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
                             <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
                         </StackPanel>
@@ -159,6 +150,44 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+
+        <Border x:Name="AudioOverlay"
+                Background="#3B82F6" 
+                Opacity="0.5"
+                Visibility="Visible"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Height="600"
+                        Width="600">
+                <TextBlock Text="Audio Instellingen"
+                           FontSize="48"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Muziek"
+                           FontSize="24"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                <Slider x:Name="MuziekSlider"
+                        Minimum="0" Maximum="100" Value="50" Width="400"/>
+                <TextBlock Text="SFX"
+                           FontSize="24"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                <Slider x:Name="SFXSlider"
+                        Minimum="0" Maximum="100" Value="50" Width="400"/>
+                <Button x:Name="CloseOverlay"
+                        Content="Terug"
+                        Background="White"
+                        Width="300"
+                        Click="Button_Back"/>
+
+
+            </StackPanel>
+
+
+        </Border>
 
     </Grid>
 </Window>
