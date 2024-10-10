@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using kabeljongen_schakelmeisje.windows;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,9 +22,11 @@ namespace kabeljongen_schakelmeisje
             InitializeComponent();
         }
 
-        private void OpenWindow()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            MovementTest MovementTest = new MovementTest();
+            MovementTest.Show();
+            this.Close();
         }
     }
 }

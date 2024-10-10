@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" WindowState="Maximized" Height="1080" Width="1920">
+    <Canvas>
+     <Button Content="Level pagina" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click" Margin="0,532,0,0"/>
+    </Canvas>
 </Window>
