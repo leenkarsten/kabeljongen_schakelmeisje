@@ -20,5 +20,10 @@ namespace kabeljongen_schakelmeisje
         {
             InitializeComponent();
         }
+
+        private void OpenWindow()
+        {
+
+        }
     }
 }
