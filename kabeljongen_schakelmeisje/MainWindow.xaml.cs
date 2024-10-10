@@ -24,8 +24,8 @@ namespace kabeljongen_schakelmeisje
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Level levelWindow = new Level();
-            levelWindow.Show();
+            MovementTest MovementTest = new MovementTest();
+            MovementTest.Show();
             this.Close();
         }
     }
