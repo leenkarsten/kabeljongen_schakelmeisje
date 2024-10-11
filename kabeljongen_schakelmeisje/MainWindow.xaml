@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
+        Title="MainWindow" WindowState="Maximized" Height="1080" Width="1920"
+        Background="#374151">
     <Grid>
-        <Button Content="Level pagina" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click" Margin="0,532,0,0"/>
+
+        <TextBox 
+                 FontSize="20" 
+                 HorizontalAlignment="Center" 
+                 VerticalAlignment="Top" 
+                 Width="760" 
+                 Height="261" 
+                 AcceptsReturn="True" Margin="0,98,0,0" Text="Kabel jongen &amp; Schakel meisje" TextAlignment="Center" TextWrapping="Wrap"/>
+        <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click" Margin="0,532,0,0" Height="143" Width="446"/>
     </Grid>
 </Window>
