@@ -5,70 +5,103 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows"
         mc:Ignorable="d"
-        Title="Level" Height="450" Width="800"
+        Title="Level" Height="1080" Width="1920"
         Background="#374151">
     <Window.Resources>
         <FontFamily x:Key="Press start 2P" >/fonts/#Press Start 2P</FontFamily>
         <DropShadowEffect x:Key="shadow" Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.7"/>
     </Window.Resources>
+
     <Grid>
-        <TextBlock FontFamily="{StaticResource Press start 2P}"
-           HorizontalAlignment="Center" 
-           TextWrapping="Wrap" 
-           Text="Level 1 gehaald!" 
-           VerticalAlignment="Top" 
-           Margin="0,107,0,0" 
-           Foreground="#FACC15" 
-           FontSize="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="211*" />
+            <RowDefinition Height="Auto" MinHeight="242.039" />
+            <RowDefinition Height="Auto" MinHeight="179" />
+            <RowDefinition Height="169.501" />
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="263*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-            <TextBlock.Effect>
-                <StaticResource ResourceKey="shadow"/>
-            </TextBlock.Effect>
-        </TextBlock>
+        <!-- Centered TextBlock -->
+        <TextBlock Grid.Row="1" Grid.Column="1" 
+                   FontFamily="{StaticResource Press start 2P}" 
+                   Text="Level 1 gehaald!" 
+                   Foreground="#FACC15" 
+                   FontSize="42" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   Effect="{StaticResource shadow}" Height="42" Width="672" />
 
-
-        <Button Margin="290,161,298,237" Background="#2563EB" BorderThickness="0">
-            <StackPanel Orientation="Horizontal"/>
+        <!-- Button 1: Volgend Level -->
+        <Button Grid.Row="2" Grid.Column="1" 
+                Height="100" Width="600" 
+                Background="#2563EB" 
+                BorderThickness="0" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <!-- Text on the Left -->
+                <TextBlock FontSize="20" FontFamily="{StaticResource Press start 2P}" 
+                           Text="Volgend level" 
+                           VerticalAlignment="Center" 
+                           Foreground="#FACC15" 
+                           Margin="10,0,10,0" />
+                <Image Height="40" Width="50" 
+                       Source="/IMG/image-removebg-preview (6).png" 
+                       Stretch="Fill" 
+                       />
+                <!-- Image on the Right -->
+            </StackPanel>
         </Button>
 
-        <Button Margin="290,210,298,186" Background="#2563EB" BorderThickness="0"/>
-        <TextBlock FontFamily="{StaticResource Press start 2P}" TextAlignment="Left" Margin="295,172,309,246" Text="Volgend level" Foreground="#FACC15">
-            <TextBlock.Effect>
-                <StaticResource ResourceKey="shadow"/>
-            </TextBlock.Effect>
-        </TextBlock>
-
-        <Button Margin="290,264,298,132" Background="#2563EB" BorderThickness="0">
-            <StackPanel Orientation="Horizontal"/>
+        <!-- Button 2: Opnieuw Spelen -->
+        <Button Grid.Row="3" Grid.Column="1" 
+                Height="100" Width="600" 
+                Background="#2563EB" 
+                BorderThickness="0" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" Margin="0,37,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <!-- Text on the Left -->
+                <TextBlock FontSize="20" FontFamily="{StaticResource Press start 2P}" 
+                           Text="Opnieuw spelen" 
+                           VerticalAlignment="Center" 
+                           Foreground="#FACC15" 
+                           Margin="10,0,10,0" />
+                <!-- Image on the Right -->
+                <Image Height="40" Width="40" 
+                       Source="/IMG/image-removebg-preview (7).png" 
+                       Stretch="Fill" 
+                       VerticalAlignment="Center" />
+            </StackPanel>
         </Button>
-        <TextBlock FontFamily="{StaticResource Press start 2P}" Text="Opnieuw spelen" TextAlignment="Left" Margin="295,221,298,197" Foreground="#FACC15">
-            <TextBlock.Effect>
-                <StaticResource ResourceKey="shadow"/>
-            </TextBlock.Effect>
-        </TextBlock>
 
-        <TextBlock  FontFamily="{StaticResource Press start 2P}" Text="Hoofdmenu" TextAlignment="Left" Margin="295,275,332,143" Foreground="#FACC15">
-            <TextBlock.Effect>
-                <StaticResource ResourceKey="shadow"/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <Image Margin="471,171,305,247" Source="/IMG/image-removebg-preview (6).png" Stretch="Fill">
-            <Image.Effect>
-                <StaticResource ResourceKey="shadow"/>
-            </Image.Effect>
-        </Image>
-        <Image Margin="474,220,308,197" Source="/IMG/image-removebg-preview (7).png" Stretch="Fill">
-            <Image.Effect>
-                <StaticResource ResourceKey="shadow"/>
-            </Image.Effect>
-        </Image>
-        <Image Margin="475,275,305,142" Source="/IMG/image-removebg-preview (8).png" Stretch="Fill">
-            <Image.Effect>
-                <StaticResource ResourceKey="shadow"/>
-            </Image.Effect>
-        </Image>
+        <!-- Button 3: Hoofdmenu -->
+        <Button Grid.Row="5" Grid.Column="1" 
+                Height="100" Width="600" 
+                Background="#2563EB" 
+                BorderThickness="0" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" Margin="0,32,0,0" Click="Button_Click">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <!-- Text on the Left -->
+                <TextBlock FontSize="20" FontFamily="{StaticResource Press start 2P}" 
+                           Text="Hoofdmenu" 
+                           VerticalAlignment="Center" 
+                           Foreground="#FACC15" 
+                           Margin="10,0,10,0" />
+                <!-- Image on the Right -->
+                <Image Height="40" Width="40" 
+                       Source="/IMG/image-removebg-preview (8).png" 
+                       Stretch="Fill" 
+                       VerticalAlignment="Center" />
+            </StackPanel>
+        </Button>
+
     </Grid>
-
 </Window>
-
-
