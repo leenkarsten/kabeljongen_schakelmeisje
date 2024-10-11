@@ -5,8 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows"
         mc:Ignorable="d"
-        Title="Level" Height="450" Width="800">
+        Title="Level" Height="450" Width="800"
+        Background="#374151">
+    <Window.Resources>
+        <FontFamily x:Key="Press start 2P" >/fonts/#Press Start 2P</FontFamily>
+        <DropShadowEffect x:Key="shadow" Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.7"/>
+    </Window.Resources>
     <Grid>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Je bent nu op de level pagina " VerticalAlignment="Center"/>
+        <TextBlock FontFamily="{StaticResource Press start 2P}"
+           HorizontalAlignment="Center" 
+           TextWrapping="Wrap" 
+           Text="Level 1 gehaald!" 
+           VerticalAlignment="Top" 
+           Margin="0,107,0,0" 
+           Foreground="#FACC15" 
+           FontSize="24">
+
+            <TextBlock.Effect>
+                <StaticResource ResourceKey="shadow"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+
+        <Button Margin="290,161,298,237" Background="#2563EB" BorderThickness="0">
+            <StackPanel Orientation="Horizontal"/>
+        </Button>
+
+        <Button Margin="290,210,298,186" Background="#2563EB" BorderThickness="0"/>
+        <TextBlock FontFamily="{StaticResource Press start 2P}" TextAlignment="Left" Margin="295,172,309,246" Text="Volgend level" Foreground="#FACC15">
+            <TextBlock.Effect>
+                <StaticResource ResourceKey="shadow"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <Button Margin="290,264,298,132" Background="#2563EB" BorderThickness="0">
+            <StackPanel Orientation="Horizontal"/>
+        </Button>
+        <TextBlock FontFamily="{StaticResource Press start 2P}" Text="Opnieuw spelen" TextAlignment="Left" Margin="295,221,298,197" Foreground="#FACC15">
+            <TextBlock.Effect>
+                <StaticResource ResourceKey="shadow"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <TextBlock  FontFamily="{StaticResource Press start 2P}" Text="Hoofdmenu" TextAlignment="Left" Margin="295,275,332,143" Foreground="#FACC15">
+            <TextBlock.Effect>
+                <StaticResource ResourceKey="shadow"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <Image Margin="471,171,305,247" Source="/IMG/image-removebg-preview (6).png" Stretch="Fill">
+            <Image.Effect>
+                <StaticResource ResourceKey="shadow"/>
+            </Image.Effect>
+        </Image>
+        <Image Margin="474,220,308,197" Source="/IMG/image-removebg-preview (7).png" Stretch="Fill">
+            <Image.Effect>
+                <StaticResource ResourceKey="shadow"/>
+            </Image.Effect>
+        </Image>
+        <Image Margin="475,275,305,142" Source="/IMG/image-removebg-preview (8).png" Stretch="Fill">
+            <Image.Effect>
+                <StaticResource ResourceKey="shadow"/>
+            </Image.Effect>
+        </Image>
     </Grid>
+
 </Window>
+
+

@@ -8,4 +8,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="assets\game-music-loop-6-144641.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\game-music-loop-6-144641.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="fonts\" />
+  </ItemGroup>
+
 </Project>
