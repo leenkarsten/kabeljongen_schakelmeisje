@@ -17,7 +17,7 @@ namespace kabeljongen_schakelmeisje
         {
             base.OnStartup(e);
 
-            mediaPlayer.Open(new Uri("C:\\Users\\Karsten\\source\\repos\\kabeljongen_schakelmeisje\\kabeljongen_schakelmeisje\\assets\\game-music-loop-6-144641.mp3"));
+            mediaPlayer.Open(new Uri("assets/game-music-loop-6-144641.mp3", UriKind.Relative));
 
             mediaPlayer.Volume = 0.5;
 
