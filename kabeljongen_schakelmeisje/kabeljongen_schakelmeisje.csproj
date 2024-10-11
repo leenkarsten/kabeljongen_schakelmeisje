@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -7,5 +7,39 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="fonts\PressStart2P-Regular.ttf" />
+    <None Remove="IMG\image-removebg-preview %286%29.png" />
+    <None Remove="IMG\image-removebg-preview %287%29.png" />
+    <None Remove="IMG\image-removebg-preview %288%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="fonts\PressStart2P-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\image-removebg-preview (6).png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\image-removebg-preview (7).png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\image-removebg-preview (8).png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+
+    <None Remove="assets\game-music-loop-6-144641.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\game-music-loop-6-144641.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="fonts\" />
+  </ItemGroup>
 
 </Project>

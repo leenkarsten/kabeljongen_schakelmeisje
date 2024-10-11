@@ -23,5 +23,16 @@ namespace kabeljongen_schakelmeisje.windows
         {
             InitializeComponent();
         }
+
+        private void Button_Audio(object sender, RoutedEventArgs e)
+        {
+            AudioOverlay.Visibility = Visibility.Visible;
+
+        }
+
+        private void Button_Back(object sender, RoutedEventArgs e)
+        {
+            AudioOverlay.Visibility = Visibility.Collapsed;
+        }
     }
 }
