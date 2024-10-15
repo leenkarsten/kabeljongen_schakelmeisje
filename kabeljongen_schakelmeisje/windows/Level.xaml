@@ -43,7 +43,8 @@
                 Background="#2563EB" 
                 BorderThickness="0" 
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center">
+                VerticalAlignment="Center"
+                Effect="{StaticResource shadow}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!-- Text on the Left -->
                 <TextBlock FontSize="20" FontFamily="{StaticResource Press start 2P}" 
@@ -65,7 +66,8 @@
                 Background="#2563EB" 
                 BorderThickness="0" 
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Top" Margin="0,37,0,0">
+                VerticalAlignment="Top" Margin="0,37,0,0"
+                Effect="{StaticResource shadow}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!-- Text on the Left -->
                 <TextBlock FontSize="20" FontFamily="{StaticResource Press start 2P}" 
@@ -87,7 +89,8 @@
                 Background="#2563EB" 
                 BorderThickness="0" 
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Top" Margin="0,32,0,0" Click="Button_Click">
+                VerticalAlignment="Top" Margin="0,32,0,0" Click="Button_Click"
+                Effect="{StaticResource shadow}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!-- Text on the Left -->
                 <TextBlock FontSize="20" FontFamily="{StaticResource Press start 2P}" 
