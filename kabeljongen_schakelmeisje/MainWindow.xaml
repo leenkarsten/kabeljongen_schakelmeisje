@@ -10,12 +10,60 @@
     <Grid>
 
         <TextBox 
-                 FontSize="20" 
-                 HorizontalAlignment="Center" 
+                 FontSize="80"  
+            HorizontalAlignment="Center" 
                  VerticalAlignment="Top" 
                  Width="760" 
-                 Height="261" 
-                 AcceptsReturn="True" Margin="0,98,0,0" Text="Kabel jongen &amp; Schakel meisje" TextAlignment="Center" TextWrapping="Wrap"/>
-        <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click" Margin="0,532,0,0" Height="143" Width="446"/>
+                 VerticalContentAlignment="Center"
+                 Height="261"
+                 AcceptsReturn="True" 
+                 Margin="0,98,0,0" 
+                 Text="Kabel jongen &amp; Schakel meisje" 
+                 TextAlignment="Center" 
+                 TextWrapping="Wrap" 
+                 TextChanged="TextBox_TextChanged_1" 
+                 Background="#FF2564EB" 
+                 Foreground="#FACC15"
+            
+            FontFamily="Press Start 2P"/>
+
+            <!-- Start Knop -->
+            <Button Content="Start" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Click="Button_Click" 
+                Height="143" 
+                Width="446" 
+                FontSize="70" 
+                Background="#FF2564EB" 
+                Foreground="#FACC15" 
+                FontFamily="Jersey 10" />
+
+                <!-- Instellingen Knop -->
+                <Button Content="Instellingen" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Click="Button_Click" 
+                Margin="0,662,0,0" 
+                Height="118" 
+                Width="386" 
+                FontSize="50" 
+                Background="#FF2564EB" 
+                Foreground="#FACC15" 
+                    FontFamily="Jersey 10"/>
+
+                    <!-- Uitgang Knop -->
+                    <Button Content="Uitgang" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Click="Button_Click" 
+                Margin="0,839,0,0" 
+                Height="118" 
+                Width="386" 
+                FontSize="50" 
+                Background="#FF2564EB" 
+                Foreground="#FACC15" 
+                        FontFamily="Jersey 10" />
+
     </Grid>
 </Window>
