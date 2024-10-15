@@ -34,7 +34,7 @@ public class MovementService
     private void StartGameLoop()
     {
         gameTimer = new DispatcherTimer();
-        gameTimer.Interval = TimeSpan.FromMilliseconds(16); // ~60 FPS
+        gameTimer.Interval = TimeSpan.FromMilliseconds(6);
         gameTimer.Tick += GameLoop;
         gameTimer.Start();
     }
