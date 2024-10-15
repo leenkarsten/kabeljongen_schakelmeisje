@@ -8,7 +8,7 @@
         Title="MovementTest" WindowState="Maximized" Width="1920" Height="1080">
     <Canvas Name="GameCanvas" Background="LightBlue">
         <Rectangle Name="Ground" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Bottom="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image x:Name="Player2" Source="C:\Users\Sande\Desktop\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="155" Canvas.Top="0" Canvas.Bottom="0"/>
-        <Image x:Name="Player" Source="C:\Users\Sande\Desktop\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="0" Canvas.Bottom="0"/>
+        <Image x:Name="Player" Source="..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="0" Canvas.Bottom="0"/>
+        <Image x:Name="Player2" Source="..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="155" Canvas.Top="0" Canvas.Bottom="0"/>
     </Canvas>
 </Window>
