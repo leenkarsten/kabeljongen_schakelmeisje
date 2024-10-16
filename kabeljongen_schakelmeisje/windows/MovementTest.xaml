@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows"
         mc:Ignorable="d"
-        Title="MovementTest" WindowState="Maximized" Width="1920" Height="1080">
+        Title="MovementTest" WindowState="Maximized">
     <Canvas Name="GameCanvas" Background="LightBlue">
         <Rectangle Name="box" Width="50" Height="50" Fill="Red" Canvas.Left="823" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="725"/>
         <Rectangle Name="Ground" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="{Binding GroundHeight}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
