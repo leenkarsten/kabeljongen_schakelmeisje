@@ -13,18 +13,21 @@
                    Foreground="#FCD34D"
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Top" 
-                   Margin="0,50,0,0"/>
+                   Margin="0,50,0,0"
+                   Effect="{StaticResource shadow}"/>
 
         <Button Style="{StaticResource CustomButtonStyle}" 
                 Content="Audio" 
                 Click="Button_Audio"
-                Margin="0,458,0,0" />
+                Margin="0,458,0,0"
+                Effect="{StaticResource shadow}"/>
 
         <Button Style="{StaticResource CustomButtonStyle}"
                 x:Name="HoofdMenu"
                 Content="Hood Menu" 
                 Click="HoofdMenu_Click"
-                Margin="0,845,0,0" />
+                Margin="0,845,0,0"
+                Effect="{StaticResource shadow}"/>
 
         <Grid x:Name="AudioOverlay"
               Visibility="Collapsed"
@@ -35,7 +38,8 @@
                        Foreground="#FCD34D"
                        HorizontalAlignment="Center" 
                        Margin="0,173,0,781"
-                       FontFamily="{StaticResource PressStart2P}"/>
+                       FontFamily="{StaticResource PressStart2P}"
+                       Effect="{StaticResource shadow}"/>
 
             <TextBlock Text="Muziek"
                        FontSize="32"
@@ -43,7 +47,8 @@
                        HorizontalAlignment="Left" 
                        Margin="528,510,0,488" 
                        Width="218"
-                       FontFamily="{StaticResource PressStart2P}"/>
+                       FontFamily="{StaticResource PressStart2P}"
+                       Effect="{StaticResource shadow}"/>
 
             <Slider x:Name="MuziekSlider"
                     Minimum="0" Maximum="100" Value="50" 
@@ -56,7 +61,8 @@
                     Content="Terug" 
                     Click="Button_Terug"
                     Margin="0,850,0,0"
-                    Background="#1F2937" />
+                    Background="#1F2937"
+                    Effect="{StaticResource shadow}"/>
         </Grid>
     </Grid>
 </Window>
