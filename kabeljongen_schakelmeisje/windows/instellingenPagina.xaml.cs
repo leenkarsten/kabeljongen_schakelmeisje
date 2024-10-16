@@ -34,5 +34,10 @@ namespace kabeljongen_schakelmeisje.windows
         {
             AudioOverlay.Visibility = Visibility.Collapsed;
         }
+
+        private void MuziekSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            App.mediaPlayer.Volume = MuziekSlider.Value / 100;
+        }
     }
 }
