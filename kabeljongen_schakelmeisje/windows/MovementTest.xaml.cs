@@ -35,8 +35,8 @@ namespace kabeljongen_schakelmeisje.windows
 
             movementService = new MovementService(Player, Player2, this, Ground);
 
-            double screenHeight = this.Height;
-            GroundHeight = screenHeight - 170; // Set the ground height based on the window height
+            double screenHeight = SystemParameters.PrimaryScreenHeight;
+            GroundHeight = screenHeight - 50; // Set the ground height based on the window height
         }
     }
 }
