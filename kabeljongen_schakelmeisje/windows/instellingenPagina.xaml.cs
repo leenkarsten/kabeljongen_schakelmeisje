@@ -30,7 +30,7 @@ namespace kabeljongen_schakelmeisje.windows
 
         }
 
-        private void Button_Back(object sender, RoutedEventArgs e)
+        private void Button_Terug(object sender, RoutedEventArgs e)
         {
             AudioOverlay.Visibility = Visibility.Collapsed;
         }
@@ -38,6 +38,13 @@ namespace kabeljongen_schakelmeisje.windows
         private void MuziekSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             App.mediaPlayer.Volume = MuziekSlider.Value / 100;
+        }
+
+        private void HoofdMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }
