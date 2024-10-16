@@ -43,7 +43,7 @@
                 Background="#2563EB" 
                 BorderThickness="0" 
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center">
+                VerticalAlignment="Center" Click="Button_Click_2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!-- Text on the Left -->
                 <TextBlock FontSize="20" FontFamily="{StaticResource Press start 2P}" 
@@ -65,7 +65,7 @@
                 Background="#2563EB" 
                 BorderThickness="0" 
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Top" Margin="0,37,0,0">
+                VerticalAlignment="Top" Margin="0,37,0,0" Click="Button_Click_1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!-- Text on the Left -->
                 <TextBlock FontSize="20" FontFamily="{StaticResource Press start 2P}" 
