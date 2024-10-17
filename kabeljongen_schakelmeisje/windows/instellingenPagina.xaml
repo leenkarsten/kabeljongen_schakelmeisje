@@ -151,43 +151,48 @@
             </Button.Template>
         </Button>
 
-        <Border x:Name="AudioOverlay"
-                Background="#3B82F6" 
-                Opacity="0.5"
-                Visibility="Visible"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
-            <StackPanel HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Height="600"
-                        Width="600">
-                <TextBlock Text="Audio Instellingen"
+        <Grid x:Name="AudioOverlay"
+              Visibility="Collapsed"
+              Background="#3B82F6">
+
+
+            <TextBlock Text="Audio Instellingen"
                            FontSize="48"
-                           Foreground="White"
-                           HorizontalAlignment="Center"/>
-                <TextBlock Text="Muziek"
-                           FontSize="24"
-                           Foreground="White"
-                           HorizontalAlignment="Center"/>
-                <Slider x:Name="MuziekSlider"
-                        Minimum="0" Maximum="100" Value="50" Width="400"/>
-                <TextBlock Text="SFX"
-                           FontSize="24"
-                           Foreground="White"
-                           HorizontalAlignment="Center"/>
-                <Slider x:Name="SFXSlider"
-                        Minimum="0" Maximum="100" Value="50" Width="400"/>
-                <Button x:Name="CloseOverlay"
-                        Content="Terug"
-                        Background="White"
-                        Width="300"
-                        Click="Button_Back"/>
+                           Foreground="#FCD34D"
+                           HorizontalAlignment="Center" Margin="0,173,0,781"/>
+            <TextBlock Text="Muziek"
+                           FontSize="32"
+                           Foreground="#FCD34D"
+                           HorizontalAlignment="Left" Margin="587,505,0,493" Width="104"/>
+            <Slider x:Name="MuziekSlider"
+                        Minimum="0" Maximum="100" Value="50" Width="400" ValueChanged="MuziekSlider_ValueChanged" Margin="760,522,760,476"/>
+
+            <Button x:Name="CloseOverlay"
+                Content="Terug" 
+                FontFamily="Press Start 2P" 
+                FontSize="28" 
+                Foreground="#FCD34D" 
+                Background="#1F2937" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom" 
+                Width="400" 
+                Height="120" 
+                Margin="0,0,0,50"
+                Click="Button_Back">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="↩" FontSize="48" Margin="0,0,10,0" VerticalAlignment="Center" Foreground="#FCD34D"/>
+                                <TextBlock Text="{TemplateBinding Content}" FontSize="28" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
 
-            </StackPanel>
-
-
-        </Border>
+        </Grid>
 
     </Grid>
 </Window>
