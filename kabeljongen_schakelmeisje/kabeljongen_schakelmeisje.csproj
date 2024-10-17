@@ -13,6 +13,8 @@
     <None Remove="IMG\image-removebg-preview %286%29.png" />
     <None Remove="IMG\image-removebg-preview %287%29.png" />
     <None Remove="IMG\image-removebg-preview %288%29.png" />
+    <None Remove="IMG\image-removebg-preview_3.png" />
+    <None Remove="IMG\image-removebg-preview_4.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +38,12 @@
     <Content Include="assets\game-music-loop-6-144641.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="IMG\image-removebg-preview_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\image-removebg-preview_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
