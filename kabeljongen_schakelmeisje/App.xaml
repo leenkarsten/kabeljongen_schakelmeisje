@@ -5,8 +5,15 @@
 
              StartupUri="windows/MovementTest.xaml">
     <Application.Resources>
+        
+        <!-- Application resource for font to be used through the entire application -->
         <FontFamily x:Key="PressStart2P" >/fonts/#Press Start 2P</FontFamily>
+        
+        <!-- Application resource for shadow to be used through the entire application -->
+        <DropShadowEffect x:Key="shadow" Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.7"/>
 
+
+        <!-- Application resource for buttons to be used through the entire application -->
         <Style x:Key="CustomButtonStyle" TargetType="Button">
             <Setter Property="FontFamily" Value="{StaticResource PressStart2P}" />
             <Setter Property="FontSize" Value="28" />
