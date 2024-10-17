@@ -22,11 +22,5 @@ namespace kabeljongen_schakelmeisje
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MovementTest MovementTest = new MovementTest();
-            MovementTest.Show();
-            this.Close();
-        }
     }
 }
