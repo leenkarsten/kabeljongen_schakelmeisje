@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using kabeljongen_schakelmeisje.windows;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,6 +22,7 @@ namespace kabeljongen_schakelmeisje
             InitializeComponent();
         }
 
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -33,6 +35,7 @@ namespace kabeljongen_schakelmeisje
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
+
 
         }
     }
