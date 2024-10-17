@@ -25,7 +25,7 @@
                  Background="#FF2564EB" 
                  Foreground="#FACC15"
             
-            FontFamily="Press Start 2P"/>
+            FontFamily="Jersey 10"/>
 
             <!-- Start Knop -->
             <Button Content="Start" 
