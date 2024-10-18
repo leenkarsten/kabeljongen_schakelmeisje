@@ -42,7 +42,7 @@ namespace kabeljongen_schakelmeisje.windows
             CheckCollisons(Player, box, OnCollisionDetected);
 
             double screenHeight = SystemParameters.PrimaryScreenHeight;
-            GroundHeight = screenHeight - 50; // Set the ground height based on the window height
+            GroundHeight = screenHeight - 28;
         }
 
         private void CheckCollisons(UIElement obj1, UIElement obj2, System.Action method)
