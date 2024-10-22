@@ -14,7 +14,7 @@
     <Grid>
 
         <TextBox 
-            FontSize="80"  
+            FontSize="50"  
             HorizontalAlignment="Center" 
             VerticalAlignment="Top" 
             Width="760" 
@@ -35,10 +35,11 @@
             VerticalAlignment="Center" 
             Height="143" 
             Width="446" 
-            FontSize="70" 
+            FontSize="50" 
             Background="#FF2564EB" 
             Foreground="#FACC15" 
             FontFamily="{StaticResource Press start 2P}"
+            Click="Start_click"
             Effect="{StaticResource shadow}"/>
 
                 <!-- Instellingen Knop -->
@@ -48,10 +49,11 @@
                 Margin="0,662,0,0" 
                 Height="118" 
                 Width="386" 
-                FontSize="50" 
+                FontSize="30" 
                 Background="#FF2564EB" 
                 Foreground="#FACC15" 
                 FontFamily="{StaticResource Press start 2P}"
+                Click="Instellingen_click"
                 Effect="{StaticResource shadow}"/>
 
                     <!-- Uitgang Knop -->
@@ -61,10 +63,11 @@
                 Margin="0,839,0,0" 
                 Height="118" 
                 Width="386" 
-                FontSize="50" 
+                FontSize="40" 
                 Background="#FF2564EB" 
                 Foreground="#FACC15" 
                 FontFamily="{StaticResource Press start 2P}" 
+                Click="Uitgang_click"
                 Effect="{StaticResource shadow}"/>
 
     </Grid>
