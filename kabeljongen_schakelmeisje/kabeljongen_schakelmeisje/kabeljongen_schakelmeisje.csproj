@@ -13,17 +13,6 @@
     <None Remove="IMG\image-removebg-preview %286%29.png" />
     <None Remove="IMG\image-removebg-preview %287%29.png" />
     <None Remove="IMG\image-removebg-preview %288%29.png" />
-    <None Remove="IMG\image-removebg-preview_3.png" />
-    <None Remove="IMG\image-removebg-preview_4.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="IMG\image-removebg-preview_3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="IMG\image-removebg-preview_4.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
