@@ -22,5 +22,24 @@ namespace kabeljongen_schakelmeisje
             InitializeComponent();
         }
 
+        private void Start_click(object sender, RoutedEventArgs e)
+        {
+            NamenInvoeren namenInvoeren = new NamenInvoeren();
+            namenInvoeren.Show();
+            this.Close();
+        }
+
+        private void Instellingen_click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+            //instellingenPagina instellingenS = new instellingenPagina();
+            //instellingenS.Show();
+            //this.Close();
+        }
+
+        private void Uitgang_click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
