@@ -1,4 +1,5 @@
 ﻿using kabeljongen_schakelmeisje.windows;
+
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -31,9 +32,8 @@ namespace kabeljongen_schakelmeisje
 
         private void Instellingen_click(object sender, RoutedEventArgs e)
         {
-            //Application.Current.Shutdown();
-            instellingenPagina instellingenS = new instellingenPagina();
-            instellingenS.Show();
+            instellingenPagina instellingenpagina = new instellingenPagina();
+            instellingenpagina.Show();
             this.Close();
         }
 

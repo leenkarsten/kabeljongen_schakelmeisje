@@ -17,9 +17,9 @@ namespace kabeljongen_schakelmeisje.windows
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class instellingenPagina : Window
     {
-        public Window1()
+        public instellingenPagina()
         {
             InitializeComponent();
         }
