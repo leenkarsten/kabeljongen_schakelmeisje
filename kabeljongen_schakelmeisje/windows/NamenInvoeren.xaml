@@ -5,8 +5,100 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows"
         mc:Ignorable="d"
-        Title="NamenInvoeren" Height="450" Width="800">
+        Title="NamenInvoeren" Height="1080" Width="1920" Background="#1F2937" WindowState="Maximized">
+
+    <Window.Resources>
+        <!-- BooleanToVisibilityConverter -->
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+        <!-- WatermarkTextBox Style with added properties -->
+        <Style x:Key="WatermarkTextBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="28" />
+            <Setter Property="Margin" Value="1,0" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="{StaticResource PressStart2P}" />
+            <Setter Property="Foreground" Value="#FCD34D" />
+            <Setter Property="Background" Value="#3B82F6" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Left" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <TextBox Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                     Foreground="{TemplateBinding Foreground}" 
+                                     Background="{TemplateBinding Background}"
+                                     BorderBrush="{TemplateBinding BorderBrush}"
+                                     FontFamily="{TemplateBinding FontFamily}"
+                                     FontSize="{TemplateBinding FontSize}"
+                                     Margin="{TemplateBinding Margin}"
+                                     VerticalAlignment="{TemplateBinding VerticalAlignment}" 
+                                     Width="{TemplateBinding Width}"
+                                     Height="{TemplateBinding Height}"
+                                     TextAlignment="Left" 
+                                     VerticalContentAlignment="Center" />
+                            <TextBlock Text="Typ hier" 
+                                       Foreground="#FCD34D" 
+                                       IsHitTestVisible="False" 
+                                       VerticalAlignment="Center" 
+                                       Margin="10,0,0,0"
+                                       FontSize="28"
+                                       Visibility="{Binding Text.IsEmpty, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Namen invullen:" 
+                   FontSize="72" 
+                   FontWeight="Bold" 
+                   Grid.Row="0" 
+                   Grid.Column="1" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   FontFamily="{StaticResource PressStart2P}" 
+                   Foreground="#FCD34D"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Text="Kies" FontSize="36" VerticalAlignment="Center" Foreground="#FCD34D" FontFamily="{StaticResource PressStart2P}"/>
+            <TextBlock Text="2" FontSize="36" Background="#FCD34D" Padding="5" Margin="5,0" VerticalAlignment="Center" FontFamily="{StaticResource PressStart2P}" Foreground="#1F2937"/>
+            <TextBlock Text="Speler(s)" FontSize="36" VerticalAlignment="Center" Foreground="#FCD34D" FontFamily="{StaticResource PressStart2P}"/>
+        </StackPanel>
+
+        <!-- Speler 1 Input -->
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0">
+            <TextBlock Text="Speler 1:" FontSize="36" VerticalAlignment="Center" FontFamily="{StaticResource PressStart2P}" Foreground="#FCD34D"/>
+            <TextBox Style="{StaticResource WatermarkTextBox}" />
+        </StackPanel>
+
+        <!-- Speler 2 Input -->
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Margin="0,25,0,0">
+            <TextBlock Text="Speler 2:" FontSize="36" VerticalAlignment="Center" FontFamily="{StaticResource PressStart2P}" Foreground="#FCD34D"/>
+            <TextBox Style="{StaticResource WatermarkTextBox}" />
+        </StackPanel>
+
+        <Button Content="Verder" FontSize="36" Padding="10,5" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Margin="0,40,0,0" />
     </Grid>
 </Window>
