@@ -25,6 +25,25 @@ namespace kabeljongen_schakelmeisje.windows
             //ik maak een change
         }
 
-    
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow startscherm = new MainWindow();
+            startscherm.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MovementTest movementTest = new MovementTest();
+            movementTest.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            MovementTest geenVolgendLevel = new MovementTest();
+            geenVolgendLevel.Show();
+            this.Close();
+        }
     }
 }

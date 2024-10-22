@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -16,14 +17,21 @@ public class MovementService
     private double speed = 4;
     private bool isJumping1 = false;
     private bool isJumping2 = false;
+    private double screenHeight;
 
     private UIElement player1;
     private UIElement player2;
+    private UIElement ground;
+    private Window window;
 
-    public MovementService(UIElement player1, UIElement player2, Window window)
+    public MovementService(UIElement player1, UIElement player2, Window window, UIElement ground)
     {
         this.player1 = player1;
         this.player2 = player2;
+        this.ground = ground;
+        this.window = window;
+
+        screenHeight = window.Height;
 
         window.KeyDown += OnKeyDown;
         window.KeyUp += OnKeyUp;
@@ -34,7 +42,7 @@ public class MovementService
     private void StartGameLoop()
     {
         gameTimer = new DispatcherTimer();
-        gameTimer.Interval = TimeSpan.FromMilliseconds(16); // ~60 FPS
+        gameTimer.Interval = TimeSpan.FromMilliseconds(6);
         gameTimer.Tick += GameLoop;
         gameTimer.Start();
     }
@@ -56,22 +64,24 @@ public class MovementService
         double player2Left = Canvas.GetLeft(player2);
         Canvas.SetLeft(player2, player2Left + velocityX2);
 
-        if (player1Top >= 860)
+        double groundTop = Canvas.GetTop(ground);
+
+        if (IsColliding(player1, ground))
         {
             if (!isJumping1)
             {
                 velocityY1 = 0;
-                Canvas.SetTop(player1, 860);
+                Canvas.SetTop(player1, groundTop - 28);
             }
             isJumping1 = false;
         }
 
-        if (player2Top >= 860)
+        if (IsColliding(player2, ground))
         {
             if (!isJumping2)
             {
                 velocityY2 = 0;
-                Canvas.SetTop(player2, 860);
+                Canvas.SetTop(player2, groundTop - 28);
             }
             isJumping2 = false;
         }
@@ -125,5 +135,20 @@ public class MovementService
         {
             velocityX2 = 0;
         }
+    }
+
+    public bool IsColliding(UIElement element1, UIElement element2)
+    {
+        double left1 = Canvas.GetLeft(element1);
+        double top1 = Canvas.GetTop(element1);
+        double right1 = left1 + element1.RenderSize.Width;
+        double bottom1 = top1 + element1.RenderSize.Height;
+
+        double left2 = Canvas.GetLeft(element2);
+        double top2 = Canvas.GetTop(element2);
+        double right2 = left2 + element2.RenderSize.Width;
+        double bottom2 = top2 + element2.RenderSize.Height;
+
+        return left1 < right2 && right1 > left2 && top1 < bottom2 && bottom1 > top2;
     }
 }

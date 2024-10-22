@@ -1,30 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using kabeljongen_schakelmeisje.Services;
+using System.ComponentModel;
+using System.Numerics;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace kabeljongen_schakelmeisje.windows
 {
     /// <summary>
     /// Interaction logic for MovementTest.xaml
     /// </summary>
-    public partial class MovementTest : Window
-    {   
+    public partial class MovementTest : Window, INotifyPropertyChanged
+    {
+        private double _groundHeight;
+        public double GroundHeight
+        {
+            get => _groundHeight;
+            set
+            {
+                _groundHeight = value;
+                OnPropertyChanged(nameof(GroundHeight));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private CollisionDetectionService collisionService;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
         private MovementService movementService;
+
         public MovementTest()
         {
             InitializeComponent();
+            DataContext = this;
 
-            movementService = new MovementService(Player, Player2, this);
+            movementService = new MovementService(Player, Player2, this, Ground);
+
+            CheckCollisons(Player, box, OnCollisionDetected);
+
+            double screenHeight = SystemParameters.PrimaryScreenHeight;
+            GroundHeight = screenHeight - 28;
+        }
+
+        private void CheckCollisons(UIElement obj1, UIElement obj2, System.Action method)
+        {
+            collisionService = new CollisionDetectionService(obj1, obj2);
+            collisionService.CollisionDetected += OnCollisionDetected;
+        }
+
+        private void OnCollisionDetected()
+        {
+            MessageBox.Show("This is a basic alert message.", "Alert");
         }
     }
 }
