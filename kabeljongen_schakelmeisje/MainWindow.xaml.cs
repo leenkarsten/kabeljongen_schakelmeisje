@@ -31,10 +31,10 @@ namespace kabeljongen_schakelmeisje
 
         private void Instellingen_click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
-            //instellingenPagina instellingenS = new instellingenPagina();
-            //instellingenS.Show();
-            //this.Close();
+            //Application.Current.Shutdown();
+            instellingenPagina instellingenS = new instellingenPagina();
+            instellingenS.Show();
+            this.Close();
         }
 
         private void Uitgang_click(object sender, RoutedEventArgs e)
