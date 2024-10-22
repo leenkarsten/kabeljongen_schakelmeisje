@@ -8,15 +8,15 @@
         Background="#374151"
         Title="levelOverview" Height="1080" Width="1920">
     <StackPanel HorizontalAlignment="center" VerticalAlignment="center">
-        <Button HorizontalAlignment="center" Style="{StaticResource CustomButtonStyle}" Width="340" Height="160" Margin="22">Introductie</Button>
-        <StackPanel Orientation="Horizontal"  >
+        <Button Click="Button_Click" HorizontalAlignment="center" Style="{StaticResource CustomButtonStyle}" Width="340" Height="160" Margin="22">Introductie</Button>
+        <StackPanel Orientation="Horizontal" Opacity="0.5" >
             <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">1</Button>
             <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">2</Button>
             <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">3</Button>
             <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">4</Button>
             <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">5</Button>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" Opacity="0.5">
             <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">6</Button>
             <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">7</Button>
             <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">8</Button>
