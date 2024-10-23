@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace kabeljongen_schakelmeisje.windows.levelen
 {
-    /// <summary>
-    /// Interaction logic for Introductie.xaml
-    /// </summary>
     public partial class Introductie : Window, INotifyPropertyChanged
     {
         private double _groundHeight;
@@ -38,9 +35,10 @@ namespace kabeljongen_schakelmeisje.windows.levelen
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         private CollisionDetectionService collisionService;
         private MovementService movementService;
-
+        private SwitchService switchService;
 
         public Introductie()
         {
@@ -48,7 +46,6 @@ namespace kabeljongen_schakelmeisje.windows.levelen
             DataContext = this;
 
             List<Rectangle> list = new List<Rectangle>();
-
             foreach (var x in GameCanvas.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "platform")
@@ -58,9 +55,21 @@ namespace kabeljongen_schakelmeisje.windows.levelen
             }
 
             movementService = new MovementService(Player, Player2, this, Ground, list);
+
+            switchService = new SwitchService(Player2, schakel, OnSwitchActivated, OnSwitchDeactivated);
+
             double screenHeight = SystemParameters.PrimaryScreenHeight;
             GroundHeight = screenHeight - 28;
+        }
 
+        private void OnSwitchActivated()
+        {
+            licht.Visibility = Visibility.Visible;
+        }
+
+        private void OnSwitchDeactivated()
+        {
+            licht.Visibility = Visibility.Collapsed;
         }
     }
 }

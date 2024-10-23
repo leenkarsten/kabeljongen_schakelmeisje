@@ -32,5 +32,26 @@
         <Rectangle Width="145" Canvas.Top="540" x:Name="Start_Copy4" Height="28" Fill="Green" Canvas.Left="1728" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Rectangle Width="1305" Canvas.Top="394" x:Name="Start_Copy6" Height="28" Fill="Green" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
         <Rectangle Width="170" Canvas.Top="475" x:Name="Start_Copy8" Height="28" Fill="Green" Canvas.Left="1449" HorizontalAlignment="Left" VerticalAlignment="Top" Tag="platform"/>
+
+        <!-- Schakel (Switch Object) -->
+        <Rectangle x:Name="schakel"
+           Width="50"
+           Height="50"
+           Fill="Blue"
+           Canvas.Left="460"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Top"
+           Canvas.Top="1030"/>
+
+        <!-- Licht (Light Object) -->
+        <Rectangle x:Name="licht"
+           Width="50"
+           Height="50"
+           Fill="White"
+           Canvas.Left="1033"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Top"
+           Canvas.Top="195"
+           Visibility="Visible"/>
     </Canvas>
 </Window>
