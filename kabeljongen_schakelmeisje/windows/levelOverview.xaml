@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows"
         mc:Ignorable="d"
         Background="#374151"
-        Title="levelOverview" Height="1080" Width="1920">
+        Title="levelOverview" WindowState="Maximized" WindowStyle="None">
     <StackPanel HorizontalAlignment="center" VerticalAlignment="center">
         <Button Click="Button_Click" HorizontalAlignment="center" Style="{StaticResource CustomButtonStyle}" Width="340" Height="160" Margin="22">Introductie</Button>
         <StackPanel Orientation="Horizontal" Opacity="0.5" >
