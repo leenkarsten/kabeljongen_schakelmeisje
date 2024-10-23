@@ -1,11 +1,10 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.Xml.Linq;
 
 public class MovementService
 {
@@ -15,7 +14,7 @@ public class MovementService
     private double velocityX2 = 0;
     private double velocityY2 = 0;
     private double gravity = 1;
-    private double jumpStrength = -15;
+    private double jumpStrength = -25;
     private double speed = 4;
     private bool isJumping1 = false;
     private bool isJumping2 = false;
@@ -70,6 +69,7 @@ public class MovementService
 
         double groundTop = Canvas.GetTop(ground);
 
+        // Handle ground collision for player 1
         if (IsColliding(player1, ground))
         {
             if (!isJumping1)
@@ -79,8 +79,8 @@ public class MovementService
             }
             isJumping1 = false;
         }
-       
 
+        // Handle ground collision for player 2
         if (IsColliding(player2, ground))
         {
             if (!isJumping2)
@@ -90,36 +90,56 @@ public class MovementService
             }
             isJumping2 = false;
         }
-        
 
-        foreach (var platform in platforms) 
+        // Handle platform collision and side collision logic
+        foreach (var platform in platforms)
         {
+            // Player 1
             if (IsOnTopOfPlatform(player1, platform))
             {
-               
-                    velocityY1 = 0;
-                    Canvas.SetTop(player1, Canvas.GetTop(platform) - player1.RenderSize.Height);
-                
+                velocityY1 = 0;
+                Canvas.SetTop(player1, Canvas.GetTop(platform) - player1.RenderSize.Height);
                 isJumping1 = false;
             }
-
-            if (IsOnTopOfPlatform(player2, platform))
-            {
-                
-                    velocityY2 = 0;
-                    Canvas.SetTop(player2, Canvas.GetTop(platform) - player2.RenderSize.Height);
-                
-                isJumping2 = false;
-            }
-
             if (IsUnderPlatform(player1, platform))
             {
                 velocityY1 = gravity;
             }
+            // Left side collision for player 1, allowing movement away
+            if (IsOnLeftSideOfPlatform(player1, platform) && velocityX1 > 0) // Moving right into the wall
+            {
+                velocityX1 = 0;
+                Canvas.SetLeft(player1, Canvas.GetLeft(platform) - player1.RenderSize.Width);
+            }
+            // Right side collision for player 1, allowing movement away
+            else if (IsOnRightSideOfPlatform(player1, platform) && velocityX1 < 0) // Moving left into the wall
+            {
+                velocityX1 = 0;
+                Canvas.SetLeft(player1, Canvas.GetLeft(platform) + platform.RenderSize.Width);
+            }
 
+            // Player 2
+            if (IsOnTopOfPlatform(player2, platform))
+            {
+                velocityY2 = 0;
+                Canvas.SetTop(player2, Canvas.GetTop(platform) - player2.RenderSize.Height);
+                isJumping2 = false;
+            }
             if (IsUnderPlatform(player2, platform))
             {
                 velocityY2 = gravity;
+            }
+            // Left side collision for player 2, allowing movement away
+            if (IsOnLeftSideOfPlatform(player2, platform) && velocityX2 > 0) // Moving right into the wall
+            {
+                velocityX2 = 0;
+                Canvas.SetLeft(player2, Canvas.GetLeft(platform) - player2.RenderSize.Width);
+            }
+            // Right side collision for player 2, allowing movement away
+            else if (IsOnRightSideOfPlatform(player2, platform) && velocityX2 < 0) // Moving left into the wall
+            {
+                velocityX2 = 0;
+                Canvas.SetLeft(player2, Canvas.GetLeft(platform) + platform.RenderSize.Width);
             }
         }
     }
@@ -162,7 +182,6 @@ public class MovementService
 
     private void OnKeyUp(object sender, KeyEventArgs e)
     {
-
         if (e.Key == Key.D || e.Key == Key.A)
         {
             velocityX1 = 0;
@@ -223,5 +242,41 @@ public class MovementService
         bool isHorizontallyAligned = right1 > left2 && left1 < right2;
 
         return isBelowPlatform && isHorizontallyAligned;
+    }
+
+    public bool IsOnLeftSideOfPlatform(UIElement element1, Rectangle element2)
+    {
+        double left1 = Canvas.GetLeft(element1);
+        double top1 = Canvas.GetTop(element1);
+        double right1 = left1 + element1.RenderSize.Width;
+        double bottom1 = top1 + element1.RenderSize.Height;
+
+        double left2 = Canvas.GetLeft(element2);
+        double top2 = Canvas.GetTop(element2);
+        double right2 = left2 + element2.RenderSize.Width;
+        double bottom2 = top2 + element2.RenderSize.Height;
+
+        bool isVerticallyAligned = bottom1 > top2 && top1 < bottom2;
+        bool isLeftOfPlatform = right1 >= left2 - 5 && right1 <= left2 + 5;
+
+        return isVerticallyAligned && isLeftOfPlatform;
+    }
+
+    public bool IsOnRightSideOfPlatform(UIElement element1, Rectangle element2)
+    {
+        double left1 = Canvas.GetLeft(element1);
+        double top1 = Canvas.GetTop(element1);
+        double right1 = left1 + element1.RenderSize.Width;
+        double bottom1 = top1 + element1.RenderSize.Height;
+
+        double left2 = Canvas.GetLeft(element2);
+        double top2 = Canvas.GetTop(element2);
+        double right2 = left2 + element2.RenderSize.Width;
+        double bottom2 = top2 + element2.RenderSize.Height;
+
+        bool isVerticallyAligned = bottom1 > top2 && top1 < bottom2;
+        bool isRightOfPlatform = left1 <= right2 + 10 && left1 >= right2 - 10;
+
+        return isVerticallyAligned && isRightOfPlatform;
     }
 }
