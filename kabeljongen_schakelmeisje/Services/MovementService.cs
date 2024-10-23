@@ -79,6 +79,7 @@ public class MovementService
             }
             isJumping1 = false;
         }
+       
 
         if (IsColliding(player2, ground))
         {
@@ -89,6 +90,7 @@ public class MovementService
             }
             isJumping2 = false;
         }
+        
 
         foreach (var platform in platforms) 
         {
@@ -108,6 +110,16 @@ public class MovementService
                     Canvas.SetTop(player2, Canvas.GetTop(platform) - player2.RenderSize.Height);
                 
                 isJumping2 = false;
+            }
+
+            if (IsUnderPlatform(player1, platform))
+            {
+                velocityY1 = gravity;
+            }
+
+            if (IsUnderPlatform(player2, platform))
+            {
+                velocityY2 = gravity;
             }
         }
     }
@@ -189,10 +201,27 @@ public class MovementService
         double right2 = left2 + element2.RenderSize.Width;
         double bottom2 = top2 + element2.RenderSize.Height;
 
-        // Check if element1 (player) is standing on top of element2 (platform)
         bool isAbovePlatform = bottom1 <= top2 + 10 && bottom1 >= top2 - 10;
         bool isHorizontallyAligned = right1 > left2 && left1 < right2;
 
         return isAbovePlatform && isHorizontallyAligned;
+    }
+
+    public bool IsUnderPlatform(UIElement element1, Rectangle element2)
+    {
+        double left1 = Canvas.GetLeft(element1);
+        double top1 = Canvas.GetTop(element1);
+        double right1 = left1 + element1.RenderSize.Width;
+        double bottom1 = top1 + element1.RenderSize.Height;
+
+        double left2 = Canvas.GetLeft(element2);
+        double top2 = Canvas.GetTop(element2);
+        double right2 = left2 + element2.RenderSize.Width;
+        double bottom2 = top2 + element2.RenderSize.Height;
+
+        bool isBelowPlatform = top1 >= bottom2 - 10 && top1 <= bottom2 + 10;
+        bool isHorizontallyAligned = right1 > left2 && left1 < right2;
+
+        return isBelowPlatform && isHorizontallyAligned;
     }
 }
