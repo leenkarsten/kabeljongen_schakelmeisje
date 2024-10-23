@@ -55,7 +55,7 @@
                    Width="50"
                    Height="50"
                    Fill="Blue"
-                   KeyDown="MovementTest_KeyDown"
+                   
                    Canvas.Left="500"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"

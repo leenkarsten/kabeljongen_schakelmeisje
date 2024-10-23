@@ -15,6 +15,10 @@
     <None Remove="IMG\image-removebg-preview %288%29.png" />
     <None Remove="IMG\image-removebg-preview_3.png" />
     <None Remove="IMG\image-removebg-preview_4.png" />
+    <None Remove="IMG\Textures\Brick_10-128x128.png" />
+    <None Remove="IMG\Textures\Bumpy_Sky-Blue_03-1024x512.png" />
+    <None Remove="IMG\Textures\pixil-frame-1.png" />
+    <None Remove="IMG\Textures\Wood_12-128x128.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +41,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="IMG\image-removebg-preview (8).png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\Brick_10-128x128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\Bumpy_Sky-Blue_03-1024x512.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\pixil-frame-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\Wood_12-128x128.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

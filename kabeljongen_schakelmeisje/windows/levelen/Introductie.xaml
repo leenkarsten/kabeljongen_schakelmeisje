@@ -6,31 +6,37 @@
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows.levelen"
         mc:Ignorable="d"
         Title="Introductie" WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920">
-    <Canvas Name="GameCanvas" Background="LightBlue">
+    <Window.Resources>
+        <ImageBrush x:Key="WallTexture" ImageSource="..\..\IMG\Textures\Brick_10-128x128.png" TileMode="Tile" Viewport="0,0,128,128" ViewportUnits="Absolute"/>
+        <ImageBrush x:Key="GroundTexture" ImageSource="..\..\IMG\Textures\Wood_12-128x128.png" TileMode="Tile" Viewport="0,0,128,128" ViewportUnits="Absolute"/>
+        <ImageBrush x:Key="Skybox" ImageSource="..\..\IMG\Textures\pixil-frame-1.png" TileMode="Tile" Viewport="0,0,1920,1080" ViewportUnits="Absolute"/>
+    </Window.Resources>
+    <Canvas Name="GameCanvas" Background="{StaticResource Skybox}">
         <!-- Borders -->
-        <Rectangle Name="Ground" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="1052" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
-        <Rectangle Name="BorderL" Width="28" Height="1024" Fill="Green" Canvas.Left="0" Canvas.Top="28" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
-        <Rectangle Name="BorderR" Width="28" Height="1024" Fill="Green" Canvas.Left="1892" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform" Canvas.Top="28"/>
-        <Rectangle Name="Roof" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle Name="BorderR" Width="28" Height="1024" Fill="{StaticResource WallTexture}" Canvas.Left="1892" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform" Canvas.Top="28"/>
+        <Rectangle Name="Roof" Width="1920" Height="28" Fill="{StaticResource WallTexture}" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle x:Name="BorderL" Width="28" Height="1024" Fill="{StaticResource WallTexture}" Canvas.Left="0" Canvas.Top="28" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle x:Name="Ground" Width="1920" Height="28" Fill="{StaticResource WallTexture}" Canvas.Left="0" Canvas.Top="1052" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
 
         <!--Players-->
-        <Image Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="997" Canvas.Bottom="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="1002" Canvas.Bottom="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Image Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="839" Canvas.Bottom="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <!-- start area -->
-        <Rectangle Name="Start" Width="482" Height="28" Fill="Green" Canvas.Top="890" Tag="platform" HorizontalAlignment="Left" Canvas.Left="28" VerticalAlignment="Center"/>
-        <Rectangle x:Name="Start_Copy" Width="679" Height="28"  Fill="Green" Canvas.Top="725" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
-        <Rectangle x:Name="Start_Copy1" Width="28px" Height="111"  Fill="Green" Canvas.Top="751" Tag="platform" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="679"/>
-        <Rectangle x:Name="Start_Copy2" Width="904" Height="28"  Fill="Green" Canvas.Top="861" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="679" Tag="platform"/>
+        <Rectangle Name="Start" Width="482" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Top="890" Tag="platform" HorizontalAlignment="Left" Canvas.Left="28" VerticalAlignment="Center"/>
+        <Rectangle x:Name="Start_Copy" Width="679" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Top="725" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
+        <Rectangle x:Name="Start_Copy1" Width="28px" Height="111" Fill="{StaticResource GroundTexture}" Canvas.Top="751" Tag="platform" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="679"/>
+        <Rectangle x:Name="Start_Copy2" Width="904" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Top="861" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="679" Tag="platform"/>
 
         <!-- 2nd floor -->
-        <Rectangle x:Name="Start_Copy3" Width="835" Height="28"  Fill="Green" Canvas.Top="560" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="212" Tag="platform"/>
-        <Rectangle Canvas.Left="1019" Width="873" Canvas.Top="696" Height="28" Fill="Green" HorizontalAlignment="Left" VerticalAlignment="Center" Tag="platform"/>
-        <Rectangle Width="28px" Canvas.Top="586" Tag="platform" Canvas.Left="1019" Height="112" Fill="Green" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle x:Name="Start_Copy3" Width="835" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Top="560" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="212" Tag="platform"/>
+        <Rectangle Canvas.Left="1019" Width="873" Canvas.Top="696" Height="28" Fill="{StaticResource GroundTexture}" HorizontalAlignment="Left" VerticalAlignment="Center" Tag="platform"/>
+        <Rectangle Width="28px" Canvas.Top="586" Tag="platform" Canvas.Left="1019" Height="112" Fill="{StaticResource GroundTexture}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <!-- 3rd floor -->
-        <Rectangle Width="145" Canvas.Top="540" x:Name="Start_Copy4" Height="28" Fill="Green" Canvas.Left="1728" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Rectangle Width="1305" Canvas.Top="394" x:Name="Start_Copy6" Height="28" Fill="Green" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
-        <Rectangle Width="170" Canvas.Top="475" x:Name="Start_Copy8" Height="28" Fill="Green" Canvas.Left="1449" HorizontalAlignment="Left" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle Width="145" Canvas.Top="540" x:Name="Start_Copy4" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Left="1728" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Rectangle Width="1305" Canvas.Top="394" x:Name="Start_Copy6" Height="28" Fill="{StaticResource GroundTexture}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
+        <Rectangle Width="170" Canvas.Top="475" x:Name="Start_Copy8" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Left="1449" HorizontalAlignment="Left" VerticalAlignment="Top" Tag="platform"/>
+
     </Canvas>
 </Window>
