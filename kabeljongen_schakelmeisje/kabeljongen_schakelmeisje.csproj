@@ -85,4 +85,10 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="assets\game-music-loop-6-144641.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
