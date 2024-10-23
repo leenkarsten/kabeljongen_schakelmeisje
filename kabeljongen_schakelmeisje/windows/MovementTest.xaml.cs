@@ -7,9 +7,6 @@ using System.Windows.Shapes;
 
 namespace kabeljongen_schakelmeisje.windows
 {
-    /// <summary>
-    /// Interaction logic for MovementTest.xaml
-    /// </summary>
     public partial class MovementTest : Window, INotifyPropertyChanged
     {
         private double _groundHeight;
@@ -37,12 +34,6 @@ namespace kabeljongen_schakelmeisje.windows
         public event PropertyChangedEventHandler PropertyChanged;
 
         private CollisionDetectionService collisionService;
-
-        protected void OnPropertyChanged(string name)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
         private MovementService movementService;
 
         public MovementTest()
@@ -78,6 +69,22 @@ namespace kabeljongen_schakelmeisje.windows
         private void OnCollisionDetected()
         {
             //MessageBox.Show("This is a basic alert message.", "Alert");
+        }
+
+        // Nieuwe KeyDown-handler voor het Window
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check of de 'E'-toets is ingedrukt
+            if (e.Key == Key.E)
+            {
+                // Toon het lichtobject
+                licht.Visibility = Visibility.Visible;
+            }
+        }
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MovementTest"
         WindowState="Maximized"
-        WindowStyle="None">
+        WindowStyle="None"
+        KeyDown="Window_KeyDown"
+>
 
     <Canvas Name="GameCanvas" Background="LightBlue">
 
@@ -55,7 +57,6 @@
                    Width="50"
                    Height="50"
                    Fill="Blue"
-                   KeyDown="MovementTest_KeyDown"
                    Canvas.Left="500"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
@@ -70,7 +71,7 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Canvas.Top="{Binding GroundHeight}"
-                   Visibility="Hidden"/>
+                   Visibility="Collapsed"/>
 
 
     </Canvas>
