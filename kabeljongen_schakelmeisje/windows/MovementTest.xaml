@@ -5,11 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows"
         mc:Ignorable="d"
-        Title="MovementTest" WindowState="Maximized" WindowStyle="None">
+        Title="MovementTest"
+        WindowState="Maximized"
+        WindowStyle="None">
+
     <Canvas Name="GameCanvas" Background="LightBlue">
-        <Rectangle Name="Ground" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="{Binding GroundHeight}" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="platform"/>
-        <Image Name="Player" Source="..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="0" Canvas.Bottom="0"/>
-        <Image Name="Player2" Source="..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="155" Canvas.Top="0" Canvas.Bottom="0"/>
-        <Rectangle x:Name="box" Width="50" Height="50" Fill="Red" Canvas.Left="823" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="{Binding BlockHeight}" Tag="platform"/>
+
+
+        <!-- Ground -->
+        <Rectangle Name="Ground"
+                   Width="1920"
+                   Height="28"
+                   Fill="Green"
+                   Canvas.Left="0"
+                   Canvas.Top="{Binding GroundHeight}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
+        <!-- Player 1 -->
+        <Image Name="Player"
+               Source="..\IMG\image-removebg-preview_4.png"
+               Width="50"
+               Height="50"
+               Canvas.Left="100"
+               Canvas.Top="0"
+               Canvas.Bottom="0"/>
+
+        <!-- Player 2 -->
+        <Image Name="Player2"
+               Source="..\IMG\image-removebg-preview_3.png"
+               Width="50"
+               Height="50"
+               Canvas.Left="155"
+               Canvas.Top="0"
+               Canvas.Bottom="0"/>
+
+        <!-- Box (Collision Object) -->
+        <Rectangle x:Name="box"
+                   Width="50"
+                   Height="50"
+                   Fill="Red"
+                   Canvas.Left="823"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Canvas.Top="{Binding GroundHeight}"/>
+
+        <!-- Schakel (Switch Object) -->
+        <Rectangle x:Name="schakel"
+                   Width="50"
+                   Height="50"
+                   Fill="Blue"
+                   KeyDown="MovementTest_KeyDown"
+                   Canvas.Left="500"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Canvas.Top="{Binding GroundHeight}"/>
+
+        <!-- Licht (Light Object) -->
+        <Rectangle x:Name="licht"
+                   Width="50"
+                   Height="50"
+                   Fill="White"
+                   Canvas.Left="1000"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Canvas.Top="{Binding GroundHeight}"
+                   Visibility="Hidden"/>
+
+
     </Canvas>
+
 </Window>
