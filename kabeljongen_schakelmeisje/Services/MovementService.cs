@@ -3,7 +3,9 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Xml.Linq;
 
 public class MovementService
 {
@@ -22,13 +24,15 @@ public class MovementService
     private UIElement player1;
     private UIElement player2;
     private UIElement ground;
+    private List<Rectangle> platforms;
     private Window window;
 
-    public MovementService(UIElement player1, UIElement player2, Window window, UIElement ground)
+    public MovementService(UIElement player1, UIElement player2, Window window, UIElement ground, List<Rectangle> platforms)
     {
         this.player1 = player1;
         this.player2 = player2;
         this.ground = ground;
+        this.platforms = platforms;
         this.window = window;
 
         screenHeight = window.Height;
@@ -84,6 +88,29 @@ public class MovementService
                 Canvas.SetTop(player2, groundTop - 42);
             }
             isJumping2 = false;
+        }
+
+        foreach (var platform in platforms) 
+        {
+            if (IsColliding(player1, platform))
+            {
+                if (!isJumping1)
+                {
+                    velocityY1 = 0;
+                    Canvas.SetTop(player1, Canvas.GetTop(platform) - player1.RenderSize.Height);
+                }
+                isJumping1 = false;
+            }
+
+            if (IsOnTopOfPlatform(player2, platform))
+            {
+                if (!isJumping2)
+                {
+                    velocityY2 = 0;
+                    Canvas.SetTop(player2, Canvas.GetTop(platform) - player2.RenderSize.Height);
+                }
+                isJumping2 = false;
+            }
         }
     }
 
@@ -150,5 +177,24 @@ public class MovementService
         double bottom2 = top2 + element2.RenderSize.Height;
 
         return left1 < right2 && right1 > left2 && top1 < bottom2 && bottom1 > top2;
+    }
+
+    public bool IsOnTopOfPlatform(UIElement element1, Rectangle element2)
+    {
+        double left1 = Canvas.GetLeft(element1);
+        double top1 = Canvas.GetTop(element1);
+        double right1 = left1 + element1.RenderSize.Width;
+        double bottom1 = top1 + element1.RenderSize.Height;
+
+        double left2 = Canvas.GetLeft(element2);
+        double top2 = Canvas.GetTop(element2);
+        double right2 = left2 + element2.RenderSize.Width;
+        double bottom2 = top2 + element2.RenderSize.Height;
+
+        // Check if element1 (player) is standing on top of element2 (platform)
+        bool isAbovePlatform = bottom1 <= top2 + 10 && bottom1 >= top2 - 10;
+        bool isHorizontallyAligned = right1 > left2 && left1 < right2;
+
+        return isAbovePlatform && isHorizontallyAligned;
     }
 }
