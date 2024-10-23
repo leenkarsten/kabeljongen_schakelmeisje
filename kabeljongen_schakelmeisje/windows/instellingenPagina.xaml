@@ -24,7 +24,7 @@
 
         <Button Style="{StaticResource CustomButtonStyle}"
                 x:Name="HoofdMenu"
-                Content="Hood Menu" 
+                Content="Hoofd Menu" 
                 Click="HoofdMenu_Click"
                 Margin="0,845,0,0"
                 Effect="{StaticResource shadow}"/>
