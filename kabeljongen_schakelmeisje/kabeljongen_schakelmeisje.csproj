@@ -20,6 +20,12 @@
     <None Remove="IMG\image-removebg-preview %289%29.png" />
     <None Remove="IMG\image-removebg-preview_3.png" />
     <None Remove="IMG\image-removebg-preview_4.png" />
+    <None Remove="IMG\Textures\Brick_10-128x128.png" />
+    <None Remove="IMG\Textures\image-removebg-preview_15.png" />
+    <None Remove="IMG\Textures\image-removebg-preview_16.png" />
+    <None Remove="IMG\Textures\Metal_05-128x128.png" />
+    <None Remove="IMG\Textures\pixil-frame-0.png" />
+    <None Remove="IMG\Textures\Wood_12-128x128.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,6 +63,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="IMG\image-removebg-preview (9).png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\Brick_10-128x128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\image-removebg-preview_15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\image-removebg-preview_16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\Metal_05-128x128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\pixil-frame-0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IMG\Textures\Wood_12-128x128.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

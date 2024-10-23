@@ -7,33 +7,50 @@
         mc:Ignorable="d"
         KeyDown="Window_KeyDown"
         Title="Introductie" WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920">
-    <Canvas Name="GameCanvas" Background="LightBlue">
+    <Window.Resources>
+        <ImageBrush x:Key="WallTexture" ImageSource="..\..\IMG\Textures\Brick_10-128x128.png" TileMode="Tile" Viewport="0,0,128,128" ViewportUnits="Absolute"/>
+        <ImageBrush x:Key="GroundTexture" ImageSource="..\..\IMG\Textures\Wood_12-128x128.png" TileMode="Tile" Viewport="0,0,128,128" ViewportUnits="Absolute"/>
+        <ImageBrush x:Key="Skybox" ImageSource="..\..\IMG\Textures\pixil-frame-0.png" TileMode="Tile" Viewport="0,0,1920,1080" ViewportUnits="Absolute"/>
+        <ImageBrush x:Key="Door" ImageSource="..\..\IMG\Textures\Metal_05-128x128.png" TileMode="Tile" Viewport="0,0,64,64" ViewportUnits="Absolute"/>
+    </Window.Resources>
+    <Canvas Name="GameCanvas" Background="{StaticResource Skybox}">
+
         <Line x:Name="cable" X1="1840" Y1="1001" X2="1172" Y2="851" Stroke="Transparent" StrokeThickness="5" Canvas.Left="-1" Canvas.Top="10"/>
 
         <!-- Borders -->
-        <Rectangle x:Name="Ground" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="1052" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
-        <Rectangle x:Name="BorderL" Width="28" Height="1024" Fill="Green" Canvas.Left="0" Canvas.Top="28" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
-        <Rectangle x:Name="BorderR" Width="28" Height="1024" Fill="Green" Canvas.Left="1892" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform" Canvas.Top="28"/>
-        <Rectangle x:Name="Roof" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+
+
+        <Rectangle x:Name="Ground" Width="1920" Height="28" Fill="{StaticResource WallTexture}" Canvas.Left="0" Canvas.Top="1052" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle x:Name="BorderL" Width="28" Height="1024" Fill="{StaticResource WallTexture}" Canvas.Left="0" Canvas.Top="28" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle x:Name="BorderR" Width="28" Height="1024" Fill="{StaticResource WallTexture}" Canvas.Left="1892" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform" Canvas.Top="28"/>
+        <Rectangle x:Name="Roof" Width="1920" Height="28" Fill="{StaticResource WallTexture}" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
         <Rectangle x:Name="Battery" Width="104" Height="102" Fill="Orange" Stroke="#b37100" StrokeThickness="5" Canvas.Left="1788" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="950" />
 
         <!--Players-->
+        <Image x:Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="95" Canvas.Top="997" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="95" Canvas.Top="835" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
 
         <!-- start area -->
-        <Rectangle x:Name="Start" Width="482" Height="28" Fill="Green" Canvas.Top="890" Tag="platform" HorizontalAlignment="Left" Canvas.Left="28" VerticalAlignment="Center"/>
-        <Rectangle x:Name="Start_Copy" Width="679" Height="28"  Fill="Green" Canvas.Top="725" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
-        <Rectangle x:Name="Start_Copy1" Width="28px" Height="111"  Fill="Green" Canvas.Top="751" Tag="platform" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="679"/>
-        <Rectangle x:Name="Start_Copy2" Width="904" Height="28"  Fill="Green" Canvas.Top="861" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="679" Tag="platform"/>
+        <Rectangle x:Name="Start" Width="482" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Top="890" Tag="platform" HorizontalAlignment="Left" Canvas.Left="28" VerticalAlignment="Center"/>
+        <Rectangle x:Name="Start_Copy" Width="679" Height="28"  Fill="{StaticResource GroundTexture}" Canvas.Top="725" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
+        <Rectangle x:Name="Start_Copy1" Width="28px" Height="111"  Fill="{StaticResource GroundTexture}" Canvas.Top="751" Tag="platform" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="679"/>
+        <Rectangle x:Name="Start_Copy2" Width="904" Height="28"  Fill="{StaticResource GroundTexture}" Canvas.Top="861" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="679" Tag="platform"/>
+        <TextBlock Canvas.Left="231" Canvas.Top="987" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Gebruik"/>
+        <TextBlock Canvas.Left="476" Canvas.Top="807" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Om te lopen" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Canvas.Left="250" Canvas.Top="805" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Gebruik" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Canvas.Left="460" Canvas.Top="987" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Om te lopen" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+
 
         <!-- 2nd floor -->
-        <Rectangle x:Name="Start_Copy3" Width="835" Height="28"  Fill="Green" Canvas.Top="560" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="212" Tag="platform"/>
-        <Rectangle Canvas.Left="1019" Width="873" Canvas.Top="696" Height="28" Fill="Green" HorizontalAlignment="Left" VerticalAlignment="Center" Tag="platform"/>
-        <Rectangle Width="28px" Canvas.Top="586" Tag="platform" Canvas.Left="1019" Height="112" Fill="Green" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle x:Name="Start_Copy3" Width="835" Height="28"  Fill="{StaticResource GroundTexture}" Canvas.Top="560" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="212" Tag="platform"/>
+        <Rectangle Canvas.Left="1019" Width="873" Canvas.Top="696" Height="28" Fill="{StaticResource GroundTexture}" HorizontalAlignment="Left" VerticalAlignment="Center" Tag="platform"/>
+        <Rectangle Width="28px" Canvas.Top="586" Tag="platform" Canvas.Left="1019" Height="112" Fill="{StaticResource GroundTexture}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <!-- 3rd floor -->
-        <Rectangle Width="145" Canvas.Top="540" x:Name="Start_Copy4" Height="28" Fill="Green" Canvas.Left="1728" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Rectangle Width="1305" Canvas.Top="394" x:Name="Start_Copy6" Height="28" Fill="Green" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
-        <Rectangle Width="170" Canvas.Top="475" x:Name="Start_Copy8" Height="28" Fill="Green" Canvas.Left="1449" HorizontalAlignment="Left" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle Width="145" Canvas.Top="540" x:Name="Start_Copy4" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Left="1728" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Rectangle Width="1305" Canvas.Top="394" x:Name="Start_Copy6" Height="28" Fill="{StaticResource GroundTexture}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="28" Tag="platform"/>
+        <Rectangle Width="170" Canvas.Top="475" x:Name="Start_Copy8" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Left="1449" HorizontalAlignment="Left" VerticalAlignment="Top" Tag="platform"/>
 
         <Image x:Name="Lever" Height="106" Canvas.Left="1144" Source="/IMG/image-removebg-preview (9).png" Stretch="Fill" Canvas.Top="797" Width="117" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Image Height="92" Canvas.Left="1794" Source="/IMG/image-removebg-preview (10).png" Stretch="Fill" Canvas.Top="955" Width="93"/>
@@ -45,6 +62,7 @@
         <Rectangle x:Name="Door" Tag="platform" Height="138" Canvas.Left="1019" Stroke="Black" Fill="Gray" Canvas.Top="422" Width="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Rectangle Height="10" Canvas.Left="1281" Fill="red" Stroke="Black" Canvas.Top="683" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Rectangle Height="10" Canvas.Left="634" Fill="red" Stroke="Black" Canvas.Top="544" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Rectangle x:Name="Door" Tag="platform" Height="138" Canvas.Left="1019" Stroke="Black" Fill="{StaticResource Door}" Canvas.Top="422" Width="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <Canvas Name="GameCanvas1" Background="LightBlue">
             <!-- Other elements -->
@@ -61,6 +79,19 @@
         <Rectangle x:Name="Button3"  Height="139" Canvas.Left="172" Fill="blue" Stroke="Black" Canvas.Top="255" Width="97" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Image x:Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="580" Canvas.Top="324" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Image x:Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="693" Canvas.Top="324" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Rectangle x:Name="Button3"  Height="29" Canvas.Left="152" Stroke="Black" Canvas.Top="365" Width="138" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Rectangle x:Name="Button4" Height="29" Canvas.Left="333" Stroke="Black" Canvas.Top="365" Width="138" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Canvas.Left="1256" Canvas.Top="950" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Gebruik" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Canvas.Left="1428" Canvas.Top="950" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="om een kabel te leggen" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Canvas.Left="1078" Canvas.Top="766" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Gebruik" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Canvas.Left="1247" Canvas.Top="766" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="om de hendel over te halen" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock Canvas.Left="1256" Canvas.Top="994" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="alleen kabel jongen kan dit" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Canvas.Left="1247" Canvas.Top="805" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="alleen schakelmeisje kan dit" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle x:Name="Latch" Tag="platform" Height="28" Canvas.Left="28" Stroke="Black" StrokeThickness="2" Fill="{StaticResource Door}" Canvas.Top="560" Width="184" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image x:Name="player4" Source="..\..\IMG\Textures\image-removebg-preview_16.png" Width="114" Height="78" Canvas.Left="341" Canvas.Top="978" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="player3" Source="..\..\IMG\Textures\image-removebg-preview_15.png" Width="125" Height="84" Canvas.Left="355" Canvas.Top="796" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image Height="43" Canvas.Left="1366" Source="/IMG/image-removebg-preview (11).png" Stretch="Fill" Canvas.Top="936" Width="57" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image Height="67" Canvas.Left="1179" Source="/IMG/image-removebg-preview (14).png" Stretch="Fill" Canvas.Top="751" Width="95"/>
 
     </Canvas>
 </Window>
