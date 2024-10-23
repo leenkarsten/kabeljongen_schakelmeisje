@@ -10,8 +10,11 @@ namespace kabeljongen_schakelmeisje.Services
         private readonly UIElement element1;
         private readonly UIElement element2;
         private readonly DispatcherTimer collisionTimer;
+        private bool isColliding = false;
 
         public event Action CollisionDetected;
+        public event Action CollisionEnded;  // New event to detect when collision ends
+
 
         public CollisionDetectionService(UIElement element1, UIElement element2)
         {
@@ -28,9 +31,17 @@ namespace kabeljongen_schakelmeisje.Services
 
         private void CheckCollision(object sender, EventArgs e)
         {
-            if (AreColliding())
+            bool currentlyColliding = AreColliding();
+
+            if (currentlyColliding && !isColliding)
             {
-                CollisionDetected?.Invoke();
+                isColliding = true;
+                CollisionDetected?.Invoke();  // Fire event when collision starts
+            }
+            else if (!currentlyColliding && isColliding)
+            {
+                isColliding = false;
+                CollisionEnded?.Invoke();  // Fire event when collision ends
             }
         }
 

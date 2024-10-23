@@ -20,6 +20,7 @@ public class MovementService
     private bool isJumping2 = false;
     private double screenHeight;
 
+
     private UIElement player1;
     private UIElement player2;
     private UIElement ground;
@@ -278,5 +279,20 @@ public class MovementService
         bool isRightOfPlatform = left1 <= right2 + 10 && left1 >= right2 - 10;
 
         return isVerticallyAligned && isRightOfPlatform;
+    }
+    public void RemovePlatform(Rectangle platform)
+    {
+        if (platforms.Contains(platform))
+        {
+            platforms.Remove(platform);
+        }
+    }
+    // Method to add a platform to the list
+    public void AddPlatform(UIElement platform)
+    {
+        if (!platforms.Contains((System.Windows.Shapes.Rectangle)platform))
+        {
+            platforms.Add((System.Windows.Shapes.Rectangle)platform);
+        }
     }
 }
