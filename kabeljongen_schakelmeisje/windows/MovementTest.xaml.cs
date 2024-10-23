@@ -34,7 +34,10 @@ namespace kabeljongen_schakelmeisje.windows
         public event PropertyChangedEventHandler PropertyChanged;
 
         private CollisionDetectionService collisionService;
+        private CollisionDetectionService switchCollisionService;
         private MovementService movementService;
+
+        private bool isPlayer2OnSwitch = false; 
 
         public MovementTest()
         {
@@ -55,15 +58,32 @@ namespace kabeljongen_schakelmeisje.windows
 
             CheckCollisons(Player, box, OnCollisionDetected);
 
+            CheckCollisons(Player2, schakel, OnSwitchCollisionDetected, OnSwitchCollisionEnded);
+
             double screenHeight = SystemParameters.PrimaryScreenHeight;
             GroundHeight = screenHeight - 28;
             BlockHeight = screenHeight - 190;
         }
 
-        private void CheckCollisons(UIElement obj1, UIElement obj2, System.Action method)
+        private void CheckCollisons(UIElement obj1, UIElement obj2, System.Action onCollisionDetected, System.Action onCollisionEnded = null)
         {
-            collisionService = new CollisionDetectionService(obj1, obj2);
-            collisionService.CollisionDetected += method;
+            var collisionDetectionService = new CollisionDetectionService(obj1, obj2);
+            collisionDetectionService.CollisionDetected += onCollisionDetected;
+
+            if (onCollisionEnded != null)
+            {
+                collisionDetectionService.CollisionEnded += onCollisionEnded;
+            }
+        }
+
+        private void OnSwitchCollisionDetected()
+        {
+            isPlayer2OnSwitch = true;
+        }
+
+        private void OnSwitchCollisionEnded()
+        {
+            isPlayer2OnSwitch = false; 
         }
 
         private void OnCollisionDetected()
@@ -71,14 +91,18 @@ namespace kabeljongen_schakelmeisje.windows
             //MessageBox.Show("This is a basic alert message.", "Alert");
         }
 
-        // Nieuwe KeyDown-handler voor het Window
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            // Check of de 'E'-toets is ingedrukt
-            if (e.Key == Key.E)
+            if (e.Key == Key.Oem2 && isPlayer2OnSwitch)
             {
-                // Toon het lichtobject
-                licht.Visibility = Visibility.Visible;
+                if (licht.Visibility == Visibility.Visible)
+                {
+                    licht.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    licht.Visibility = Visibility.Visible;
+                }
             }
         }
 
