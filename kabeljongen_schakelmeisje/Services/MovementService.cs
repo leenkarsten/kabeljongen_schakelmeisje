@@ -14,7 +14,7 @@ public class MovementService
     private double velocityX2 = 0;
     private double velocityY2 = 0;
     private double gravity = 1;
-    private double jumpStrength = -25;
+    private double jumpStrength = -22;
     private double speed = 4;
     private bool isJumping1 = false;
     private bool isJumping2 = false;

@@ -42,9 +42,7 @@ namespace kabeljongen_schakelmeisje.windows
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            MovementTest geenVolgendLevel = new MovementTest();
-            geenVolgendLevel.Show();
-            this.Close();
+            
         }
     }
 }

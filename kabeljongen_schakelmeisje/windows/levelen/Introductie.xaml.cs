@@ -126,6 +126,7 @@ namespace kabeljongen_schakelmeisje.windows.levelen
             if (e.Key == Key.H && isLeverFlipped && isPlayerNearLever)
             {
                 RemoveLatch();
+                cable.Stroke = new SolidColorBrush(Colors.Yellow);
             }
         }
 
