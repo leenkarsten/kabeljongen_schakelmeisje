@@ -18,8 +18,8 @@
         <Rectangle x:Name="Battery" Width="104" Height="102" Fill="Orange" Stroke="#b37100" StrokeThickness="5" Canvas.Left="1788" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="950" />
 
         <!--Players-->
-        <Image x:Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="1704" Canvas.Top="997" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Image x:Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="839" Canvas.Bottom="0" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <Image x:Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="1701" Canvas.Top="951" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="1094" Canvas.Top="797" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
 
         <!-- start area -->
         <Rectangle x:Name="Start" Width="482" Height="28" Fill="Green" Canvas.Top="890" Tag="platform" HorizontalAlignment="Left" Canvas.Left="28" VerticalAlignment="Center"/>
@@ -44,7 +44,18 @@
         <!--Latch-->
         <Rectangle x:Name="Latch" Tag="platform" Height="28" Canvas.Left="28" Stroke="Black" StrokeThickness="2" Fill="Gray" Canvas.Top="560" Width="184" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Image Height="67" Canvas.Left="1180" Source="/IMG/image-removebg-preview (14).png" Stretch="Fill" Canvas.Top="739" Width="95"/>
-        <Rectangle x:Name="Door" Height="138" Canvas.Left="1019" Stroke="Black" Fill="Gray" Canvas.Top="422" Width="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Rectangle x:Name="Button" Height="28" Canvas.Left="630" Stroke="Black" Canvas.Top="540" Width="111"/>
+        <Rectangle x:Name="Door" Tag="platform" Height="138" Canvas.Left="1019" Stroke="Black" Fill="Gray" Canvas.Top="422" Width="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <Canvas Name="GameCanvas1" Background="LightBlue">
+            <!-- Other elements -->
+            <!-- First button -->
+            <Rectangle x:Name="Button" Height="28" Canvas.Left="628" Stroke="Black" Canvas.Top="532" Width="111"/>
+
+            <!-- Second button -->
+            <Rectangle x:Name="Buttons" Height="28" Canvas.Left="1276" Stroke="Black" Canvas.Top="670" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Canvas>
+        <Rectangle x:Name="Button3"  Height="29" Canvas.Left="152" Stroke="Black" Canvas.Top="365" Width="138" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Rectangle x:Name="Button4" Height="29" Canvas.Left="333" Stroke="Black" Canvas.Top="365" Width="138" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
     </Canvas>
 </Window>

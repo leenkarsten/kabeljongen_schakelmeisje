@@ -287,4 +287,12 @@ public class MovementService
             platforms.Remove(platform);
         }
     }
+    // Method to add a platform to the list
+    public void AddPlatform(UIElement platform)
+    {
+        if (!platforms.Contains((System.Windows.Shapes.Rectangle)platform))
+        {
+            platforms.Add((System.Windows.Shapes.Rectangle)platform);
+        }
+    }
 }
