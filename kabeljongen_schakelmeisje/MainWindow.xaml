@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje"
         mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized" Height="1080" Width="1920"
-        Background="#374151">
+        Title="MainWindow" WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920"
+        Background="#1F2937">
     <Window.Resources>
         <FontFamily x:Key="Press start 2P" >/fonts/#Press Start 2P</FontFamily>
         <DropShadowEffect x:Key="shadow" Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.7"/>
@@ -14,54 +14,48 @@
     <Grid>
 
         <!-- TextBlock inside a Grid to center the text -->
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Width="760" Height="261" Background="#FF2564EB">
-            <TextBlock 
-                Text="Kabel jongen &amp; Schakel meisje" 
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Width="900" Height="300" >
+            <Button
+                Content="Kabel jongen &amp; Schakel meisje" 
                 FontSize="50" 
-                Foreground="#FACC15"
-                TextAlignment="Center" 
-                VerticalAlignment="Center" 
-                HorizontalAlignment="Center"
-                TextWrapping="Wrap"
-                FontFamily="{StaticResource Press start 2P}"/>
+                VerticalAlignment="Center"
+                Style="{StaticResource CustomButtonStyle}"
+                FontFamily="{StaticResource Press start 2P}" Width="895" Height="200"/>
         </Grid>
         <!-- Start Knop -->
         <Button Content="Start" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
-            Height="143" 
-            Width="446" 
+            Height="120" 
+            Width="370" 
             FontSize="50" 
-            Background="#FF2564EB" 
-            Foreground="#FACC15" 
+            Style="{StaticResource CustomButtonStyle}"
             FontFamily="{StaticResource Press start 2P}"
             Click="Start_click"
             Effect="{StaticResource shadow}"/>
 
-                <!-- Instellingen Knop -->
-                <Button Content="Instellingen" 
+        <!-- Instellingen Knop -->
+        <Button Content="Instellingen" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Top" 
                 Margin="0,662,0,0" 
-                Height="118" 
-                Width="386" 
+                Height="120" 
+                Width="370" 
                 FontSize="30" 
-                Background="#FF2564EB" 
-                Foreground="#FACC15" 
+                Style="{StaticResource CustomButtonStyle}"
                 FontFamily="{StaticResource Press start 2P}"
                 Click="Instellingen_click"
                 Effect="{StaticResource shadow}"/>
 
-                    <!-- Uitgang Knop -->
+        <!-- Uitgang Knop -->
         <Button Content="Uitgang" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Top" 
                 Margin="0,839,0,0" 
-                Height="118" 
-                Width="386" 
+                Height="120" 
+                Width="370" 
                 FontSize="40" 
-                Background="#FF2564EB" 
-                Foreground="#FACC15" 
+                Style="{StaticResource CustomButtonStyle}"
                 FontFamily="{StaticResource Press start 2P}" 
                 Click="Uitgang_click"
                 Effect="{StaticResource shadow}"/>
