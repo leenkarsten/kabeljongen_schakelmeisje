@@ -99,6 +99,6 @@
             <TextBox Style="{StaticResource WatermarkTextBox}" />
         </StackPanel>
 
-        <Button Content="Verder" FontSize="36" Padding="10,5" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Margin="0,40,0,0" />
+        <Button Content="Verder" FontSize="36" Padding="10,5" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Margin="0,40,0,0" Click="Verder_Button" />
     </Grid>
 </Window>

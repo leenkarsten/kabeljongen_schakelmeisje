@@ -39,21 +39,27 @@ namespace kabeljongen_schakelmeisje.windows
 
             movementService = new MovementService(Player, Player2, this, Ground);
 
-            CheckCollisons(Player, box, OnCollisionDetected);
+            CheckCollisons(Player, box, OnCollisionDetected, b);
 
             double screenHeight = SystemParameters.PrimaryScreenHeight;
             GroundHeight = screenHeight - 28;
         }
 
-        private void CheckCollisons(UIElement obj1, UIElement obj2, System.Action method)
+        private void CheckCollisons(UIElement obj1, UIElement obj2, System.Action method, System.Action method2)
         {
             collisionService = new CollisionDetectionService(obj1, obj2);
-            collisionService.CollisionDetected += OnCollisionDetected;
+            collisionService.CollisionDetected += method;
+            collisionService.StoodOnPlatform += method2;
         }
 
         private void OnCollisionDetected()
         {
-            MessageBox.Show("This is a basic alert message.", "Alert");
+            //MessageBox.Show("This is a basic alert message.", "Alert");
+        }
+
+        private void b()
+        {
+            MessageBox.Show("hij staat er op", "Alert");
         }
     }
 }
