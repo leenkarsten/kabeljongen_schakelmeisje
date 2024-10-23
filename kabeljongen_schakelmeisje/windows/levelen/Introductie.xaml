@@ -5,11 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows.levelen"
         mc:Ignorable="d"
-        Title="Introductie" WindowState="Maximized" WindowStyle="None" Height="1440" Width="2560">
+        Title="Introductie" WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920">
     <Canvas Name="GameCanvas" Background="LightBlue">
-        <Rectangle Name="Ground" Width="2560" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="{Binding GroundHeight}" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="platform"/>
-        <Image Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="0" Canvas.Bottom="0"/>
-        <Image Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="155" Canvas.Top="0" Canvas.Bottom="0"/>
-        <Rectangle x:Name="box" Width="990" Height="50" Fill="Red" Canvas.Left="656" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1280" Tag="platform"/>
+        <!-- Borders -->
+        <Rectangle Name="Ground" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="1052" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle Name="BorderL" Width="28" Height="1080" Fill="Green" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle Name="BorderR" Width="28" Height="1080" Fill="Green" Canvas.Left="1892" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+        <Rectangle Name="Roof" Width="1920" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform"/>
+
+        <!--Players-->
+        <Image Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="78" Canvas.Top="1000" Canvas.Bottom="0"/>
+        <Image Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="78" Canvas.Top="786" Canvas.Bottom="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <Rectangle Name="Start" Width="510" Height="28"  Fill="Green" Canvas.Top="890" HorizontalAlignment="Left" VerticalAlignment="Center" Tag="platform"/>
+        <Rectangle x:Name="Start_Copy" Width="707" Height="28"  Fill="Green" Canvas.Top="725" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle x:Name="Start_Copy1" Width="28px" Height="164"  Fill="Green" Canvas.Top="725" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="679"/>
+        <Rectangle x:Name="Start_Copy2" Width="904" Height="28"  Fill="Green" Canvas.Top="861" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="679"/>
+        <Rectangle x:Name="Start_Copy3" Width="835" Height="28"  Fill="Green" Canvas.Top="560" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="212"/>
+
+        <Rectangle Width="1333" Canvas.Top="394" x:Name="Start_Copy6" Height="28" Fill="Green" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle Width="170" Canvas.Top="560" x:Name="Start_Copy7" Height="28" Fill="Green" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="1750"/>
+        <Rectangle Width="170" Canvas.Top="475" x:Name="Start_Copy8" Height="28" Fill="Green" Canvas.Left="1449" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Rectangle Canvas.Left="1019" Width="904" Canvas.Top="696" Height="28" Fill="Green" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Rectangle Width="28px" Canvas.Top="560" Tag="platform" Canvas.Left="1019" Height="164" Fill="Green" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Canvas>
 </Window>
