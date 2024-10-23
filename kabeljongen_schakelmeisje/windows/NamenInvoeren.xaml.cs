@@ -23,5 +23,12 @@ namespace kabeljongen_schakelmeisje.windows
         {
             InitializeComponent();
         }
+
+        private void Verder_Button(object sender, RoutedEventArgs e)
+        {
+            levelOverview levelOverview = new levelOverview();
+            levelOverview.Show();
+            this.Close();
+        }
     }
 }

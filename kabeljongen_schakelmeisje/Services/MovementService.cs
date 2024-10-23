@@ -71,7 +71,7 @@ public class MovementService
             if (!isJumping1)
             {
                 velocityY1 = 0;
-                Canvas.SetTop(player1, groundTop - 28);
+                Canvas.SetTop(player1, groundTop - 42);
             }
             isJumping1 = false;
         }
@@ -81,7 +81,7 @@ public class MovementService
             if (!isJumping2)
             {
                 velocityY2 = 0;
-                Canvas.SetTop(player2, groundTop - 28);
+                Canvas.SetTop(player2, groundTop - 42);
             }
             isJumping2 = false;
         }
