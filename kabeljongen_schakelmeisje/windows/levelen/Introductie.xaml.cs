@@ -1,16 +1,25 @@
 ﻿using kabeljongen_schakelmeisje.Services;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace kabeljongen_schakelmeisje.windows
+namespace kabeljongen_schakelmeisje.windows.levelen
 {
     /// <summary>
-    /// Interaction logic for MovementTest.xaml
+    /// Interaction logic for Introductie.xaml
     /// </summary>
-    public partial class MovementTest : Window, INotifyPropertyChanged
+    public partial class Introductie : Window, INotifyPropertyChanged
     {
         private double _groundHeight;
         public double GroundHeight
@@ -23,29 +32,17 @@ namespace kabeljongen_schakelmeisje.windows
             }
         }
 
-        private double _blockHeight;
-        public double BlockHeight
-        {
-            get => _blockHeight;
-            set
-            {
-                _blockHeight = value;
-                OnPropertyChanged(nameof(BlockHeight));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private CollisionDetectionService collisionService;
-
         protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        private CollisionDetectionService collisionService;
         private MovementService movementService;
 
-        public MovementTest()
+
+        public Introductie()
         {
             InitializeComponent();
             DataContext = this;
@@ -61,23 +58,9 @@ namespace kabeljongen_schakelmeisje.windows
             }
 
             movementService = new MovementService(Player, Player2, this, Ground, list);
-
-            CheckCollisons(Player, box, OnCollisionDetected);
-
             double screenHeight = SystemParameters.PrimaryScreenHeight;
             GroundHeight = screenHeight - 28;
-            BlockHeight = screenHeight - 190;
-        }
 
-        private void CheckCollisons(UIElement obj1, UIElement obj2, System.Action method)
-        {
-            collisionService = new CollisionDetectionService(obj1, obj2);
-            collisionService.CollisionDetected += method;
-        }
-
-        private void OnCollisionDetected()
-        {
-            //MessageBox.Show("This is a basic alert message.", "Alert");
         }
     }
 }

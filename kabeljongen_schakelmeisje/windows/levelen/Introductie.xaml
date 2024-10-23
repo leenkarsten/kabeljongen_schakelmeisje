@@ -1,0 +1,15 @@
+﻿<Window x:Class="kabeljongen_schakelmeisje.windows.levelen.Introductie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kabeljongen_schakelmeisje.windows.levelen"
+        mc:Ignorable="d"
+        Title="Introductie" WindowState="Maximized" WindowStyle="None" Height="1440" Width="2560">
+    <Canvas Name="GameCanvas" Background="LightBlue">
+        <Rectangle Name="Ground" Width="2560" Height="28" Fill="Green" Canvas.Left="0" Canvas.Top="{Binding GroundHeight}" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="platform"/>
+        <Image Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="100" Canvas.Top="0" Canvas.Bottom="0"/>
+        <Image Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="155" Canvas.Top="0" Canvas.Bottom="0"/>
+        <Rectangle x:Name="box" Width="990" Height="50" Fill="Red" Canvas.Left="656" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1280" Tag="platform"/>
+    </Canvas>
+</Window>

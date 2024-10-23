@@ -92,23 +92,21 @@ public class MovementService
 
         foreach (var platform in platforms) 
         {
-            if (IsColliding(player1, platform))
+            if (IsOnTopOfPlatform(player1, platform))
             {
-                if (!isJumping1)
-                {
+               
                     velocityY1 = 0;
                     Canvas.SetTop(player1, Canvas.GetTop(platform) - player1.RenderSize.Height);
-                }
+                
                 isJumping1 = false;
             }
 
             if (IsOnTopOfPlatform(player2, platform))
             {
-                if (!isJumping2)
-                {
+                
                     velocityY2 = 0;
                     Canvas.SetTop(player2, Canvas.GetTop(platform) - player2.RenderSize.Height);
-                }
+                
                 isJumping2 = false;
             }
         }
