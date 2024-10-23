@@ -27,8 +27,8 @@
         <Rectangle x:Name="Battery" Width="104" Height="102" Fill="Orange" Stroke="#b37100" StrokeThickness="5" Canvas.Left="1788" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="950" />
 
         <!--Players-->
-        <Image x:Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="95" Canvas.Top="997" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Image x:Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="95" Canvas.Top="835" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Image x:Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="95" Canvas.Top="840" Canvas.Bottom="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image x:Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="95" Canvas.Top="1002" Canvas.Bottom="0" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
         <!-- start area -->
         <Rectangle x:Name="Start" Width="482" Height="28" Fill="{StaticResource GroundTexture}" Canvas.Top="890" Tag="platform" HorizontalAlignment="Left" Canvas.Left="28" VerticalAlignment="Center"/>
@@ -39,6 +39,8 @@
         <TextBlock Canvas.Left="476" Canvas.Top="807" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Om te lopen" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Canvas.Left="250" Canvas.Top="805" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Gebruik" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBlock Canvas.Left="460" Canvas.Top="987" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Om te lopen" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock Canvas.Left="511" Canvas.Top="324" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Ga beide in de portals staan om het level te halen" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
 
 
 
@@ -57,8 +59,8 @@
         <Image Height="43" Canvas.Left="1816" Source="/IMG/image-removebg-preview (11).png" Stretch="Fill" Canvas.Top="875" Width="57" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <!--Latch-->
-        <Rectangle x:Name="Latch" Tag="platform" Height="28" Canvas.Left="28" Stroke="Black" StrokeThickness="2" Fill="Gray" Canvas.Top="560" Width="184" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Rectangle x:Name="Door" Tag="platform" Height="138" Canvas.Left="1019" Stroke="Black" Fill="Gray" Canvas.Top="422" Width="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle x:Name="Latch" Tag="platform" Height="28" Canvas.Left="28" Stroke="Black" StrokeThickness="2" Fill="{StaticResource Door}" Canvas.Top="560" Width="184" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Rectangle x:Name="Door" Tag="platform" Height="138" Canvas.Left="1019" Stroke="Black" Fill="{StaticResource Door}" Canvas.Top="422" Width="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Rectangle Height="10" Canvas.Left="1281" Fill="red" Stroke="Black" Canvas.Top="683" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Rectangle Height="10" Canvas.Left="634" Fill="red" Stroke="Black" Canvas.Top="543" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
@@ -80,11 +82,12 @@
         <TextBlock Canvas.Left="1078" Canvas.Top="766" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Gebruik" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Canvas.Left="1247" Canvas.Top="766" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="om de hendel over te halen" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <TextBlock Canvas.Left="1256" Canvas.Top="994" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="alleen kabel jongen kan dit" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Canvas.Left="1247" Canvas.Top="805" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="alleen schakelmeisje kan dit" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock Canvas.Left="1247" Canvas.Top="805" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="alleen schakel meisje kan dit" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Image x:Name="player4" Source="..\..\IMG\Textures\image-removebg-preview_16.png" Width="114" Height="78" Canvas.Left="341" Canvas.Top="978" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
         <Image x:Name="player3" Source="..\..\IMG\Textures\image-removebg-preview_15.png" Width="125" Height="84" Canvas.Left="355" Canvas.Top="796" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Image Height="43" Canvas.Left="1366" Source="/IMG/image-removebg-preview (11).png" Stretch="Fill" Canvas.Top="936" Width="57" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Image Height="66" Canvas.Left="1179" Source="/IMG/image-removebg-preview (14).png" Stretch="Fill" Canvas.Top="746" Width="95"/>
-
+        <Image Height="50" Canvas.Left="196" Source="/IMG/image-removebg-preview_4.png" Stretch="Fill" Canvas.Top="170" Width="50"/>
+        <Image Height="50" Canvas.Left="378" Source="/IMG/image-removebg-preview_3.png" Stretch="Fill" Canvas.Top="170" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center"/>
     </Canvas>
 </Window>
