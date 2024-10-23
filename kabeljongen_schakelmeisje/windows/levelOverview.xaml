@@ -7,21 +7,56 @@
         mc:Ignorable="d"
         Background="#374151"
         Title="levelOverview" WindowState="Maximized" WindowStyle="None">
+    <Window.Resources>
+        <DropShadowEffect x:Key="shadow" Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.7"/>
+    </Window.Resources>
+    
     <StackPanel HorizontalAlignment="center" VerticalAlignment="center">
-        <Button Click="Button_Click" HorizontalAlignment="center" Style="{StaticResource CustomButtonStyle}" Width="340" Height="160" Margin="22">Introductie</Button>
+        <Button
+            HorizontalAlignment="Left"
+            Click="Button_Click2" 
+            Style="{StaticResource CustomButtonStyle}" 
+            Effect="{StaticResource shadow}"
+            Cursor="Hand"
+            Margin="20"
+            Width="200"
+            Height="60">
+           
+            Terug
+        </Button>
+        <TextBlock Text="Levels" 
+           FontSize="75" 
+           FontWeight="Bold"
+           Margin="0 0 0 80"
+           HorizontalAlignment="Center" 
+           VerticalAlignment="Center"
+           FontFamily="{StaticResource PressStart2P}"
+           Effect="{StaticResource shadow}"
+           Foreground="#FCD34D"/>
+
+        <Button
+            Click="Button_Click" HorizontalAlignment="center" 
+            Style="{StaticResource CustomButtonStyle}" 
+            Effect="{StaticResource shadow}"
+            Cursor="Hand"
+            Margin="22"
+            Width="340" 
+            Height="160">
+            Introductie
+        </Button>
         <StackPanel Orientation="Horizontal" Opacity="0.5" >
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">1</Button>
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">2</Button>
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">3</Button>
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">4</Button>
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">5</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">1</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">2</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">3</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">4</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">5</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Opacity="0.5">
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">6</Button>
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">7</Button>
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">8</Button>
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">9</Button>
-            <Button Style="{StaticResource CustomButtonStyle}" Width="280" Height="160" Margin="22">10</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">6</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">7</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">8</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">9</Button>
+            <Button Style="{StaticResource CustomButtonStyle}" Effect="{StaticResource shadow}" Width="280" Height="160" Margin="22">10</Button>
         </StackPanel>
     </StackPanel>
 </Window>

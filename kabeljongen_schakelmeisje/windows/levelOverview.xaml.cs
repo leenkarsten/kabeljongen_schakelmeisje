@@ -29,5 +29,11 @@ namespace kabeljongen_schakelmeisje.windows
             movementtest.Show();
             this.Close();
         }
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            NamenInvoeren namenInvoeren = new NamenInvoeren();
+            namenInvoeren.Show();
+            this.Close();
+        }
     }
 }
