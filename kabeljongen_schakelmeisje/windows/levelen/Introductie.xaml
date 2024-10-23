@@ -58,11 +58,9 @@
 
         <!--Latch-->
         <Rectangle x:Name="Latch" Tag="platform" Height="28" Canvas.Left="28" Stroke="Black" StrokeThickness="2" Fill="Gray" Canvas.Top="560" Width="184" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image Height="67" Canvas.Left="1180" Source="/IMG/image-removebg-preview (14).png" Stretch="Fill" Canvas.Top="739" Width="95"/>
         <Rectangle x:Name="Door" Tag="platform" Height="138" Canvas.Left="1019" Stroke="Black" Fill="Gray" Canvas.Top="422" Width="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Rectangle Height="10" Canvas.Left="1281" Fill="red" Stroke="Black" Canvas.Top="683" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Rectangle Height="10" Canvas.Left="634" Fill="red" Stroke="Black" Canvas.Top="544" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Rectangle x:Name="Door" Tag="platform" Height="138" Canvas.Left="1019" Stroke="Black" Fill="{StaticResource Door}" Canvas.Top="422" Width="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle Height="10" Canvas.Left="634" Fill="red" Stroke="Black" Canvas.Top="543" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <Canvas Name="GameCanvas1" Background="LightBlue">
             <!-- Other elements -->
@@ -77,21 +75,16 @@
         </Canvas>
         <Rectangle x:Name="Button4" Height="139" Canvas.Left="354" Fill="Pink" Stroke="Black" Canvas.Top="255" Width="99" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Rectangle x:Name="Button3"  Height="139" Canvas.Left="172" Fill="blue" Stroke="Black" Canvas.Top="255" Width="97" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Image x:Name="Player" Source="..\..\IMG\image-removebg-preview_4.png" Width="50" Height="50" Canvas.Left="580" Canvas.Top="324" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Image x:Name="Player2" Source="..\..\IMG\image-removebg-preview_3.png" Width="50" Height="50" Canvas.Left="693" Canvas.Top="324" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Rectangle x:Name="Button3"  Height="29" Canvas.Left="152" Stroke="Black" Canvas.Top="365" Width="138" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Rectangle x:Name="Button4" Height="29" Canvas.Left="333" Stroke="Black" Canvas.Top="365" Width="138" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBlock Canvas.Left="1256" Canvas.Top="950" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Gebruik" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBlock Canvas.Left="1428" Canvas.Top="950" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="om een kabel te leggen" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBlock Canvas.Left="1078" Canvas.Top="766" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="Gebruik" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Canvas.Left="1247" Canvas.Top="766" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="om de hendel over te halen" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <TextBlock Canvas.Left="1256" Canvas.Top="994" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="alleen kabel jongen kan dit" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Canvas.Left="1247" Canvas.Top="805" FontFamily="{StaticResource PressStart2P}" FontSize="15" Text="alleen schakelmeisje kan dit" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Rectangle x:Name="Latch" Tag="platform" Height="28" Canvas.Left="28" Stroke="Black" StrokeThickness="2" Fill="{StaticResource Door}" Canvas.Top="560" Width="184" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Image x:Name="player4" Source="..\..\IMG\Textures\image-removebg-preview_16.png" Width="114" Height="78" Canvas.Left="341" Canvas.Top="978" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
         <Image x:Name="player3" Source="..\..\IMG\Textures\image-removebg-preview_15.png" Width="125" Height="84" Canvas.Left="355" Canvas.Top="796" Canvas.Bottom="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Image Height="43" Canvas.Left="1366" Source="/IMG/image-removebg-preview (11).png" Stretch="Fill" Canvas.Top="936" Width="57" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Image Height="67" Canvas.Left="1179" Source="/IMG/image-removebg-preview (14).png" Stretch="Fill" Canvas.Top="751" Width="95"/>
+        <Image Height="66" Canvas.Left="1179" Source="/IMG/image-removebg-preview (14).png" Stretch="Fill" Canvas.Top="746" Width="95"/>
 
     </Canvas>
 </Window>
