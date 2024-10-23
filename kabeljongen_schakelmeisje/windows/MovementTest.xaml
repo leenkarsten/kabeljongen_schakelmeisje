@@ -11,6 +11,7 @@
 
     <Canvas Name="GameCanvas" Background="LightBlue">
 
+
         <!-- Ground -->
         <Rectangle Name="Ground"
                    Width="1920"
@@ -70,6 +71,7 @@
                    VerticalAlignment="Top"
                    Canvas.Top="{Binding GroundHeight}"
                    Visibility="Hidden"/>
+
 
     </Canvas>
 

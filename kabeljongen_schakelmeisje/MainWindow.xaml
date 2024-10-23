@@ -13,23 +13,19 @@
     </Window.Resources>
     <Grid>
 
-        <TextBox 
-            FontSize="50"  
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Top" 
-            Width="760" 
-            VerticalContentAlignment="Center"
-            Height="261"
-            AcceptsReturn="True" 
-            Margin="0,98,0,0" 
-            Text="Kabel jongen &amp; Schakel meisje" 
-            TextAlignment="Center" 
-            TextWrapping="Wrap" 
-            Background="#FF2564EB" 
-            Foreground="#FACC15"
-            FontFamily="{StaticResource Press start 2P}"/>
-
-            <!-- Start Knop -->
+        <!-- TextBlock inside a Grid to center the text -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Width="760" Height="261" Background="#FF2564EB">
+            <TextBlock 
+                Text="Kabel jongen &amp; Schakel meisje" 
+                FontSize="50" 
+                Foreground="#FACC15"
+                TextAlignment="Center" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center"
+                TextWrapping="Wrap"
+                FontFamily="{StaticResource Press start 2P}"/>
+        </Grid>
+        <!-- Start Knop -->
         <Button Content="Start" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 

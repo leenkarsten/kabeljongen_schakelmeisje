@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kabeljongen_schakelmeisje.windows.levelen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,8 +26,14 @@ namespace kabeljongen_schakelmeisje.windows
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MovementTest movementtest = new MovementTest();
+            Introductie movementtest = new Introductie();
             movementtest.Show();
+            this.Close();
+        }
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            NamenInvoeren namenInvoeren = new NamenInvoeren();
+            namenInvoeren.Show();
             this.Close();
         }
     }
