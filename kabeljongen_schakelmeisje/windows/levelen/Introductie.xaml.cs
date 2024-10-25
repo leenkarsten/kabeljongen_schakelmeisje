@@ -24,6 +24,8 @@ namespace kabeljongen_schakelmeisje.windows.levelen
         private bool isLeverFlipped = false;
         private bool isPlayerNearLever = false;
         private bool isPlayerCollidingWithBattery = false;
+        public string naam1;
+        public string naam2;    
 
         // Track whether player is on either of the buttons
         private bool isPlayer1OnButton1 = false;
@@ -58,10 +60,12 @@ namespace kabeljongen_schakelmeisje.windows.levelen
         private CollisionDetectionService collisionService;
         private MovementService movementService;
 
-        public Introductie()
+        public Introductie(string Naam1, string Naam2)
         {
             InitializeComponent();
             DataContext = this;
+            naam1 = Naam1;
+            naam2 = Naam2;
 
             List<System.Windows.Shapes.Rectangle> list = new List<System.Windows.Shapes.Rectangle>();
 
@@ -196,7 +200,7 @@ namespace kabeljongen_schakelmeisje.windows.levelen
             if (isPlayer1OnButton3 && isPlayer2OnButton4)
             {
                 // Navigate to the next window when both players are on their buttons
-                Level nextLevelWindow = new Level();
+                Level nextLevelWindow = new Level(naam1, naam2);
                 nextLevelWindow.Show();
                 this.Close();  // Optionally close the current window
             }

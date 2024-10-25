@@ -20,13 +20,17 @@ namespace kabeljongen_schakelmeisje.windows
     /// </summary>
     public partial class levelOverview : Window
     {
-        public levelOverview()
+        string Naam1;
+        string Naam2;
+        public levelOverview(string naam1, string naam2)
         {
             InitializeComponent();
+            Naam1 = naam1;
+            Naam2 = naam2;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Introductie movementtest = new Introductie();
+            Introductie movementtest = new Introductie(Naam1, Naam2);
             movementtest.Show();
             this.Close();
         }

@@ -90,13 +90,13 @@
         <!-- Speler 1 Input -->
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0">
             <TextBlock Text="Speler 1:" FontSize="36" VerticalAlignment="Center" FontFamily="{StaticResource PressStart2P}" Foreground="#FCD34D"/>
-            <TextBox Style="{StaticResource WatermarkTextBox}" />
+            <TextBox x:Name="Naam1" Style="{StaticResource WatermarkTextBox}" />
         </StackPanel>
 
         <!-- Speler 2 Input -->
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Margin="0,25,0,0">
             <TextBlock Text="Speler 2:" FontSize="36" VerticalAlignment="Center" FontFamily="{StaticResource PressStart2P}" Foreground="#FCD34D"/>
-            <TextBox Style="{StaticResource WatermarkTextBox}" />
+            <TextBox x:Name="Naam2" Style="{StaticResource WatermarkTextBox}" />
         </StackPanel>
 
         <Button Content="Verder" FontSize="36" Padding="10,5" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Margin="0,40,0,0" Click="Verder_Button" />

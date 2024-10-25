@@ -26,7 +26,10 @@ namespace kabeljongen_schakelmeisje.windows
 
         private void Verder_Button(object sender, RoutedEventArgs e)
         {
-            levelOverview levelOverview = new levelOverview();
+            var naam1 = Naam1.Text;
+            var naam2 = Naam2.Text;
+
+            levelOverview levelOverview = new levelOverview(naam1, naam2);
             levelOverview.Show();
             this.Close();
         }

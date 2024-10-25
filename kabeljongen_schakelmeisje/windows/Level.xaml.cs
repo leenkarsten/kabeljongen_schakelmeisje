@@ -20,10 +20,18 @@ namespace kabeljongen_schakelmeisje.windows
     /// </summary>
     public partial class Level : Window
     {
-        public Level()
+        public string naam1;
+        public string naam2;
+        public Level(string Naam1, string Naam2)
         {
             InitializeComponent();
             //ik maak een change
+
+            naam1 = Naam1;
+            naam2 = Naam2;
+
+            name1.Text = Naam1;
+            name2.Text = Naam2;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,7 +43,7 @@ namespace kabeljongen_schakelmeisje.windows
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Introductie movementTest = new Introductie();
+            Introductie movementTest = new Introductie(naam1, naam2);
             movementTest.Show();
             this.Close();
         }

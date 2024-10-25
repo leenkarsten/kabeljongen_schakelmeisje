@@ -39,8 +39,9 @@
 
         <TextBlock Grid.Row="1" Grid.Column="1" 
             FontFamily="{StaticResource Press start 2P}" 
-            Text="Sander" 
+            Text="{Binding naam1}" 
             Foreground="#FACC15" 
+            Name="name2"
             FontSize="42" 
             HorizontalAlignment="Left" 
             VerticalAlignment="Bottom"
@@ -48,7 +49,7 @@
 
         <TextBlock Grid.Row="1" Grid.Column="1" 
     FontFamily="{StaticResource Press start 2P}" 
-    Text="Karsten" 
+    Name="name1" 
     Foreground="#FACC15" 
     FontSize="42" 
     HorizontalAlignment="Right" 
